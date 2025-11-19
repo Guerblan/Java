@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.ComboBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.seniordelosanios.controlador.VistaFicherosControlador" spacing="18" alignment="center" minWidth="700" minHeight="500" maxWidth="700" maxHeight="500" style="-fx-background-color: #f8f8f8;">
+    <Label fx:id="label" text="Tierra Media Ficheros" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-padding: 10 0 10 0;" />
+    <TableView fx:id="tablaHabitantes" prefWidth="650" prefHeight="220" maxWidth="650" maxHeight="220" style="-fx-font-size: 14px;">
+        <columns>
+            <TableColumn fx:id="nombreCol" text="Nombre" prefWidth="120" />
+            <TableColumn fx:id="edadCol" text="Edad" prefWidth="60" />
+            <TableColumn fx:id="razaCol" text="Raza" prefWidth="100" />
+            <TableColumn fx:id="ocupacionCol" text="Ocupación" prefWidth="120" />
+            <TableColumn fx:id="localidadCol" text="Localidad" prefWidth="120" />
+        </columns>
+    </TableView>
+    <GridPane hgap="12" vgap="10" alignment="center" maxWidth="650">
+        <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <TextField fx:id="nombreField" GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="180" />
+        <Label text="Edad:" GridPane.rowIndex="0" GridPane.columnIndex="2" />
+        <TextField fx:id="edadField" GridPane.rowIndex="0" GridPane.columnIndex="3" maxWidth="80" />
+        <Label text="Raza:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <ComboBox fx:id="razaCombo" promptText="Selecciona raza" GridPane.rowIndex="1" GridPane.columnIndex="1" maxWidth="180" />
+        <Label text="Ocupación:" GridPane.rowIndex="1" GridPane.columnIndex="2" />
+        <ComboBox fx:id="ocupacionCombo" promptText="Selecciona ocupación" GridPane.rowIndex="1" GridPane.columnIndex="3" maxWidth="180" />
+        <Label text="Localidad:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+        <ComboBox fx:id="localidadCombo" promptText="Selecciona localidad" GridPane.rowIndex="2" GridPane.columnIndex="1" maxWidth="180" />
+    </GridPane>
+    <HBox spacing="16" alignment="center" maxWidth="650">
+        <Button fx:id="button" text="Atrás" onAction="#onButtonClick" minWidth="120" />
+        <Button fx:id="button2" text="Guardar Habitante" onAction="#onButtonClick2" minWidth="180" />
+        <Button fx:id="button3" text="Eliminar Habitante" onAction="#onButtonClick3" minWidth="180" />
+    </HBox>
+</VBox>
