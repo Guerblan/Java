@@ -1,0 +1,87 @@
+// COMPILACIÓN POR CONSOLA (EN CASO DE QUE NO FUNCIONE LA COMPILACIÓN EN SUBLIMETEXT)
+/** 
+ * Paso 1: abrir terminal e ir a la ruta donde estan los .java (comando cd para moverse por la terminal seguido de la ruta)
+ * Paso 2: compilar los .java
+ * javac *.java
+ * Paso 3: ejecutar el main, indicando el nombre de la clase (sin añadir ni .java ni .class al final)
+ * java nombreDeLaClase
+ */
+
+// IMPORTS
+import java.util.Collection;
+import java.util.List;
+import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.TreeSet;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.TreeMap;
+import java.util.Map.Entry;
+import java.util.Random;
+import java.lang.Comparable;
+
+
+// GETTERS Y SETTERS
+// ROBOT
+public int getIdentificador() {
+    return this.identificador;
+}
+
+public String getNombre() {
+    return this.nombre;
+}
+
+public void setNombre(String nombre) {
+    this.nombre = nombre;
+}
+
+public String getEspecialidad() {
+    return this.especialidad;
+}
+
+public void setEspecialidad(String ocupacion) {
+    this.especialidad = ocupacion;
+}
+
+public boolean getTrabajando() {
+    return this.trabajando;
+}
+
+public void setTrabajando(boolean trabajando) {
+    this.trabajando = trabajando;
+}
+
+public int getEnergia() {
+    return this.energia;
+}
+
+public void setEnergia(int porcentajeBateria) {
+    this.energia = porcentajeBateria;
+}
+
+// ROBOBRERO
+public String getSeccion() {
+    return this.seccion;
+}
+
+public void setSeccion(String seccion) {
+    this.seccion = seccion;
+}
+
+public int getPotencia() {
+    return this.potencia;
+}
+
+public boolean getRoto() {
+    return this.roto;
+}
+
+public void setRoto(boolean roto) {
+    this.roto = roto;
+}
+
+public void setPotencia(int potencia) {
+    this.potencia = potencia;
+}

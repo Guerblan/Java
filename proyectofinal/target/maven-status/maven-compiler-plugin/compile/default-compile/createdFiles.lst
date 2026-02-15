@@ -1,0 +1,7 @@
+com\seniordelosanios\controlador\VistaPrincipalControlador.class
+com\seniordelosanios\App.class
+com\seniordelosanios\controlador\VistaBaseDeDatosControlador.class
+com\seniordelosanios\DAO\FicherosDAO.class
+com\seniordelosanios\modelo\habitante.class
+com\seniordelosanios\DAO\BaseDeDatosDAO.class
+com\seniordelosanios\controlador\VistaFicherosControlador.class
