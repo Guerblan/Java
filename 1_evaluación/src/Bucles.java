@@ -387,6 +387,15 @@ public class Bucles {
      * 1 al 10.
      */
     public static void ejercicio11() {
+        Scanner sca = new Scanner(System.in);
+        System.out.println("Dime un número");
+        double num = 0;
+        double resultado = 0;
+        num = sca.nextDouble();
+        for (int i = 1; i < 10; i++) {
+            resultado = i * num;
+            System.out.println(resultado);
+        }
 
     }
 
@@ -407,6 +416,52 @@ public class Bucles {
      * Celsius: (ºF - 32) / 1.8)
      */
     public static void ejercicio12() {
+        Scanner sca = new Scanner(System.in);
+        double temp = 0;
+        String escala = "";
+        int opcion = 0;
+        double conversion = 0;
+        while (opcion != 3) {
+            System.out.println("------------------------------------------");
+            System.out.println("          CONVERSOR DE TEMPERATURAS               ");
+            System.out.println("------------------------------------------");
+            System.out.println("          1.Introducir temperatura               ");
+            System.out.println("          2.Convertir               ");
+            System.out.println("          3.Salir                ");
+            System.out.println("------------------------------------------");
+            System.out.println("Elija una opción");
+            opcion = sca.nextInt();
+            sca.nextLine();
+
+            switch (opcion) {
+                case 1:
+                    System.out.println("Introduce una temperatura");
+                    temp = sca.nextDouble();
+                    sca.nextLine();
+
+                    System.out.println("Temperatura = " + temp);
+                    break;
+                case 2:
+                    System.out.println("En qué escala está la temperatura introducida?");
+                    escala = sca.nextLine().trim();
+                    if (escala.equalsIgnoreCase("c")) {
+                        conversion = (temp * 1.8) + 32;
+                        System.out.println(
+                                temp + "en grados celsius corresponde a " + conversion + " en grados farenhait");
+                    }
+                    if (escala.equalsIgnoreCase("f")) {
+                        conversion = (temp - 32) / 1.8;
+                        System.out.println(
+                                temp + " en grados farenhait corresponde a " + conversion + " en grados celsius");
+                    }
+                    break;
+                case 3:
+                    System.out.println("Ha salido del programa");
+                    break;
+                default:
+                    break;
+            }
+        }
 
     }
 
@@ -667,9 +722,9 @@ public class Bucles {
         // ejercicio7();
         // ejercicio8();
         // ejercicio9();
-        ejercicio10();
+        // ejercicio10();
         // ejercicio11();
-        // ejercicio12();
+        ejercicio12();
         // ejercicio13();
         // ejercicio14();
         // ejercicio15();
