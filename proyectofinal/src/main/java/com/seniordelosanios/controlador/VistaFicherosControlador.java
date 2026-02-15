@@ -34,15 +34,7 @@ public class VistaFicherosControlador {
     private javafx.scene.control.ComboBox<String> ocupacionCombo;
     @FXML
     private javafx.scene.control.ComboBox<String> localidadCombo;
-    /*
-     * Esto significa que este controlador trabaja con el DAO que guarda los datos
-     * en un fichero (habitantes.bin).
-     * 
-     * Al inicializarse, el DAO carga los datos existentes del fichero y los deja
-     * listos para mostrarse.
-     * 
-     * 
-     */
+
     private FicherosDAO ficherosDAO = new FicherosDAO();
 
     @FXML

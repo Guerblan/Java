@@ -3,9 +3,6 @@ package com.seniordelosanios.modelo;
 import java.io.Serializable;
 
 public class habitante implements Serializable {
-    /*
-     * Necesito esta declaración para poder hacer escritura en binario
-     */
     private static final long serialVersionUID = 1L;
 
     private String nombre;
@@ -78,5 +75,7 @@ public class habitante implements Serializable {
                 '}';
     }
 
-    
+    public static Object toArray(habitante[] habitantes) {
+        throw new UnsupportedOperationException("Unimplemented method 'toArray'");
+    }
 }

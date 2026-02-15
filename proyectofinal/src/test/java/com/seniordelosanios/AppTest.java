@@ -1,6 +1,5 @@
 package com.seniordelosanios;
 
-public class AppTest 
-{
-  
+public class AppTest {
+
 }

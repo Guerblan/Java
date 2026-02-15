@@ -10,20 +10,12 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         /*
-         * La clase Parent es una clase de la que vienen todas las demás clases.La llamamos root y con ella apuntamos 
-         * al VistaPrincipal.fxml
-         * 
-         * Es un clase vacía,un nodo vacío sin información.En este nodo mediante la biblioteca fxml loader  cargaremos 
-         * la clase y los recursos de la ruta que le demos.En este caso VistPrincipal.fxml
-         * 
+         * aquí en el root estamos cargando la clase y el resource,que son la ventana y
+         * todo lo que se ve
          */
         Parent root = FXMLLoader
                 .load(getClass().getResource("/com/seniordelosanios/recursos/vista/VistaPrincipal.fxml"));
-                //"Cargamos " una escena (importante usar esa palabra y no otra) y le damos unos valores
         primaryStage.setTitle("Registro de Habitantes de Endor");
-        /*
-         * Establecemos la escena,las proporciones de la ventana y cargamos los recursos del rooteo
-         */
         primaryStage.setScene(new Scene(root, 400, 300));
         primaryStage.show();
     }

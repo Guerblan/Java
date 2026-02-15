@@ -1,4 +1,3 @@
-package Practica.src;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -6,8 +5,9 @@ import java.util.Scanner;
 
 public class ArraysPractica {
     public static void ejercicio1() {
+
         /*
-         * Ejercicio 1: DECLARACIÓN + INICIALIZACIÓN
+         * Ejercicio 1: Declaración e inicialización de arrays
          * Declara un array de enteros llamado numeros con un tamaño de 5 elementos.
          * 
          * Inicializa el array con los valores 10, 20, 30, 40, 50.
@@ -22,8 +22,7 @@ public class ArraysPractica {
 
     public static void ejercicio2() {
         /*
-         * Ejercicio 2: DECLARACIÓN + INICIALIZACIÓN
-         * 
+         * Ejercicio 1.1: Declaración e inicialización de arrays
          * Declara un array de enteros llamado notas con un tamaño de 4 elementos.
          * 
          * Inicializa el array con los valores 8, 6, 9, 7.
@@ -36,9 +35,8 @@ public class ArraysPractica {
     }
 
     public static void ejercicio3() {
-        // MODIFICACIÓN DE ELEMENTOS
         /*
-         * Ejercicio 3:
+         * Ejercicio 3: Modificación de elementos
          * Declara un array de enteros llamado temperaturas con un tamaño de 3
          * elementos.
          * 
@@ -318,8 +316,6 @@ public class ArraysPractica {
          * Escribe un programa en Java que implemente el método de burbuja para ordenar
          * un array de enteros en orden ascendente. El array inicial será: {5, 3, 8, 4,
          * 6}.
-         * 
-         * 
          */
         int[] enteros = { 5, 3, 8, 4, 6 };
         int aux;
@@ -1526,67 +1522,27 @@ public class ArraysPractica {
     }
 
     public static void ejercicio46() {
-        /*
-         * Define un vector de 10 posiciones e introduce las 5 primeras posiciones con
-         * numeros enteros y muestralo.
-         * Borra la posicion 2 y muestralo.
-         * 
-         * Borra el elemento que tenga como valor 8
-         *
-         */
-        Scanner scan = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        int[][] matriz = new int[4][4];
 
-        int listaNum[] = new int[10];
+        System.out.println("Introduce los valores de la matriz 4x4:");
 
-        int posicion = 5;
-
-        // Introduce valores en el vector.
-        for (int i = 0; i < posicion; i++) {
-            System.out.println("Introduce un valor:");
-            listaNum[i] = scan.nextInt();
-        }
-        // Imprimir el vector
-        for (int i = 0; i < posicion; i++) {
-            System.out.println("El vector es: " + listaNum[i]);
-        }
-        System.out.println();
-
-        // Eliminar con la posicion del vector.
-        /*
-         * System.out.println("Que posicion quieres quitar");
-         * int posEliminada = scan.nextInt();
-         * for (int i = posEliminada; i < posicion - 1; i++) {
-         * listaNum[i] = listaNum[i + 1];
-         * 
-         * }
-         * listaNum[posicion - 1] = 0;
-         * posicion--;
-         * // Muestra el vector
-         * for (int i = 0; i < posicion; i++) {
-         * System.out.println("El vector que queda es:" + listaNum[i]);
-         * }
-         */
-
-        // Eliminar segun un valor
-
-        System.out.println("Introduce el valor que quieres eliminar:");
-        int valor = scan.nextInt();
-        for (int i = 0; i < posicion; i++) {
-            if (listaNum[i] == valor) {
-                for (int j = i; j < posicion - 1; j++) {
-                    listaNum[j] = listaNum[j + 1];
-
-                }
-                listaNum[posicion - 1] = 0;
-                posicion--;
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print("Elemento [" + i + "][" + j + "]: ");
+                matriz[i][j] = sc.nextInt();
             }
-
         }
 
-        // Muestra el vector
-        for (int i = 0; i < posicion; i++) {
-            System.out.println("El vector que queda es:" + listaNum[i]);
+        System.out.println("\nMatriz resultante:");
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(matriz[i][j] + "\t");
+            }
+            System.out.println();
         }
+
+        sc.close();
 
     }
 
@@ -1607,56 +1563,56 @@ public class ArraysPractica {
     }
 
     public static void main(String[] args) throws Exception {
-        // ejercicio1(); // DECLARACIÓN + INICIALIZACIÓN
-        // ejercicio2(); // DECLARACIÓN + INICIALIZACIÓN
-        // ejercicio3(); // MODIFICACIÓN DE ELEMENTOS
-        // ejercicio4(); // RECORRIDO Y LECTURA DE ARRAYS
-        // ejercicio5(); // SUMATORIA DE ELEMENTOS EN ARRAYS
-        // ejercicio6(); // BÚSQUEDA SECUENCIAL EN ARRAYS
-        // ejercicio7(); // ORDENAMIENTO SIMPLE (BUBBLE SORT)
-        // ejercicio8(); // ORDENAMIENTO SIMPLE (SELECTION SORT)
-        // ejercicio9(); // ORDENAMIENTO SIMPLE (INSERTION SORT)
-        // ejercicio10(); // COPIA DE ARRAYS
-        // ejercicio11(); // INVERSIÓN DE ARRAYS
-        // ejercicio12(); // CONCATENACIÓN DE ARRAYS
-        // ejercicio13(); // INTRODUCCIÓN DE DATOS POR TECLADO EN ARRAYS
-        // ejercicio14(); // IMPRESIÓN FORMATEADA DE ARRAYS
-        // ejercicio15(); // MANEJO DE ARRAYS DE STRINGS
-        // ejercicio16(); // MANEJO DE ARRAYS DE OBJETOS
-        // ejercicio17(); // CONTAR OCURRENCIAS EN UN ARRAY
-        // ejercicio18(); // ENCONTRAR MÁXIMO Y MÍNIMO EN UN ARRAY
-        // ejercicio19(); // CALCULAR PROMEDIO DE ELEMENTOS
-        // ejercicio20(); // ELIMINAR ELEMENTO POR ÍNDICE (DESPLAZAMIENTO)
-        // ejercicio21(); // ELIMINAR ELEMENTO POR VALOR (DESPLAZAMIENTO)
-        // ejercicio22(); // INSERCIÓN EN ARRAY EN POSICIÓN ESPECÍFICA
-        // ejercicio23(); // EXPANDIR ARRAY (SIMULACIÓN)
-        // ejercicio24(); // REDUCIR ARRAY (SIMULACIÓN)
-        // ejercicio25(); // COPIA PARCIAL DE ARRAY
-        // ejercicio26(); // ROTACIÓN DE ELEMENTOS EN ARRAY
-        // ejercicio27(); // FILTRADO DE ELEMENTOS SEGÚN CRITERIO
-        // ejercicio28(); // SUMA DE ARRAYS ELEMENTO A ELEMENTO
-        // ejercicio29(); // COMPARACIÓN DE DOS ARRAYS
-        // ejercicio30(); // INTERSECCIÓN DE DOS ARRAYS
-        // ejercicio31(); // UNIÓN DE DOS ARRAYS
-        // ejercicio32(); // MANEJO DE ARRAYS MULTIDIMENSIONALES
-        // ejercicio33(); // RECORRIDO DE ARRAYS MULTIDIMENSIONALES
-        // ejercicio34(); // SUMATORIA DE ARRAYS MULTIDIMENSIONALES
-        // ejercicio35(); // BÚSQUEDA EN ARRAYS MULTIDIMENSIONALES
-        // ejercicio36(); // MODIFICACIÓN EN ARRAYS MULTIDIMENSIONALES
-        // ejercicio37(); // INTRODUCCIÓN Y MUESTREO DE NOMBRES EN ARRAY
-        // ejercicio38(); // ORDENAMIENTO BUBBLE SORT ASCENDENTE
-        // ejercicio39(); // ORDENAMIENTO SELECTION SORT DESCENDENTE
-        // ejercicio40(); // ACCESO SEGURO A POSICIONES DE ARRAY
-        // ejercicio41(); // ELIMINAR ELEMENTO POR NOMBRE EN ARRAY FIJO
-        // ejercicio42(); // ELIMINAR ELEMENTO POR ÍNDICE Y POR VALOR
-        // ejercicio43(); // BUSCAR Y SUSTITUIR VALORES EN ARRAY
-        // ejercicio44(); // ELIMINACIÓN POR POSICIÓN Y POR VALOR (VARIAS FORMAS)
-        // ejercicio45(); // INICIALIZACIÓN Y ELIMINACIÓN MÚLTIPLE DE VALORES
-        // ejercicio46(); // INTRODUCCIÓN, ELIMINACIÓN POR POSICIÓN Y VALOR
-        // ejercicio47(); // COPIAR ARRAYS Y REALIZAR MODIFICACIONES
-        // ejercicio48(); // INVERTIR ARRAYS Y COMPARAR CON ORIGINAL
-        // ejercicio49(); // MANIPULACIÓN AVANZADA DE ARRAYS CON FUNCIONES
-        // ejercicio50(); // RESUMEN Y PRÁCTICA INTEGRADORA DE ARRAYS
+        // ejercicio1();
+        // ejercicio2();
+        // ejercicio3();
+        // ejercicio4();
+        // ejercicio5();
+        // ejercicio6();
+        // ejercicio7();
+        // ejercicio8();
+        // ejercicio9();
+        // ejercicio10();
+        // ejercicio11();
+        // ejercicio12();
+        // ejercicio13();
+        // ejercicio14();
+        // ejercicio15();
+        // ejercicio16();
+        // ejercicio17();
+        // ejercicio18();
+        // ejercicio19();
+        // ejercicio20();
+        // ejercicio21();
+        // ejercicio22();
+        // ejercicio23();
+        // ejercicio24();
+        // ejercicio25();
+        // ejercicio26();
+        // ejercicio27();
+        // ejercicio28();
+        // ejercicio29();
+        // ejercicio30();
+        // ejercicio31();
+        // ejercicio32();
+        // ejercicio33();
+        // ejercicio34();
+        // ejercicio35();
+        // ejercicio36();
+        // ejercicio37();
+        // ejercicio38();
+        // ejercicio39();
+        // ejercicio40();
+        // ejercicio41();
+        // ejercicio42();
+        // ejercicio43();
+        // ejercicio44();
+        // ejercicio45();
+        // ejercicio46();
+        // ejercicio47();
+        ejercicio48();
+        // ejercicio49();
+        // ejercicio50();
 
     }
 }

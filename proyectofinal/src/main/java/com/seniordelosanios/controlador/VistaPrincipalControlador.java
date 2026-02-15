@@ -17,9 +17,7 @@ public class VistaPrincipalControlador {
 
     @FXML
     private ComboBox<String> comboBox;
-/*
- * Lo que hay dentro del parámetro activa el desarrollo del método
- */
+
     @FXML
     private void onButtonClick(javafx.event.ActionEvent event) {
         try {
