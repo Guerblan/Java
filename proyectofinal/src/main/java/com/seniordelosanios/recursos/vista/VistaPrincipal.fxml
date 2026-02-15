@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.ComboBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.seniordelosanios.controlador.VistaPrincipalControlador" spacing="10" alignment="center">
+    <Label fx:id="label" text="¿Que quiere hacer mi señor?" />
+    <Button fx:id="button" text="Ficheros" onAction="#onButtonClick" />
+    <Button fx:id="button2" text="Base de datos" onAction="#onButtonClick2" />
+</VBox>
