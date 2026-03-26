@@ -257,23 +257,146 @@ class Bucles20Ejercicios {
     }
 
     public static void ejercicio10() {
-
+        /*
+         * Contar números pares introducidos por el usuario
+         * 
+         * Este parece fácil, pero es importante porque mezcla contador + condición, y
+         * eso sale mucho.
+         * 
+         * 🔴 Enunciado
+         * 
+         * Haz un programa que:
+         * 
+         * Pida 10 números
+         * Cuente cuántos son pares
+         * Muestre:
+         * Cantidad de números pares: X
+         */
+        Scanner sc = new Scanner(System.in);
+        int pares = 0;
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("Dame un múmero");
+            int num = sc.nextInt();
+            if (num % 2 == 0) {
+                pares++;
+            }
+        }
+        System.out.println(pares);
     }
 
     public static void ejercicio11() {
+        /*
+         * Sumar solo números positivos
+         * 
+         * Este ya empieza a mezclar cosas.
+         * 
+         * Enunciado
+         * 
+         * Haz un programa que:
+         * 
+         * Pida 10 números
+         * Sume solo los positivos
+         * Muestre:
+         * La suma de positivos es: X
+         */
+        Scanner sc = new Scanner(System.in);
+        int sum = 0;
 
+        for (int i = 1; i <= 10; i++) {
+            int num = sc.nextInt();
+            if (num > 0) {
+                sum = sum + num;
+            }
+        }
+        System.out.println(sum);
     }
 
     public static void ejercicio12() {
+        /*
+         * Haz un programa que:
+         * 
+         * Pida números al usuario
+         * Siga pidiendo números hasta que el usuario escriba 0
+         * Sume todos los números introducidos
+         * Muestre:
+         * La suma total es: X
+         */
+        Scanner sc = new Scanner(System.in);
+        int num = 0;
+        int sum = 0;
+        System.err.println("Dame un número");
+        num = sc.nextInt();
+        while (num != 0) {
 
+            sum += num;
+            System.out.println("Dame otro número");
+            num = sc.nextInt();
+        }
+        System.out.println("La suma total es: " + sum);
     }
 
     public static void ejercicio13() {
+        /*
+         * ENUNCIADO
+         * 
+         * Haz un programa que:
+         * 
+         * Pida números al usuario
+         * Siga pidiendo números hasta que el usuario escriba un número negativo
+         * Cuente cuántos números se han introducido
+         * Muestre:
+         * Cantidad de números introducidos: X
+         */
+        Scanner sc = new Scanner(System.in);
+        int num = 0;
+        int contador = 0;
+        System.out.println("Introduce un número");
+        num = sc.nextInt();
+        while (num >= 0) {
+            contador++;
+            System.out.println("Dame otro número");
+            num = sc.nextInt();
 
+        }
+        System.out.println(contador);
     }
 
     public static void ejercicio14() {
-
+        /*
+         * Haz un programa que muestre este menú:
+         * 
+         * 1 - Saludar
+         * 2 - Mostrar número 10
+         * 3 - Salir
+         * 
+         * El programa debe:
+         * 
+         * Mostrar el menú
+         * Pedir una opción
+         * Ejecutar la opción elegida
+         * Repetir el menú hasta elegir 3
+         */
+        Scanner sc = new Scanner(System.in);
+        int opcion = 0;
+        opcion = sc.nextInt();
+        System.out.println("1 - Saludar");
+        System.out.println("1 - Mostrar número 10");
+        System.out.println("1 - Salir");
+        while (opcion != 3) {
+            switch (opcion) {
+                case 1:
+                    System.out.println("Hola");
+                    break;
+                case 2:
+                    System.out.println("10");
+                    break;
+                case 3:
+                    System.out.println("Saliendo");
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     public static void ejercicio15() {
@@ -300,13 +423,53 @@ class Bucles20Ejercicios {
 
     }
 
+    public static void ejercicio21() {
+
+    }
+
+    public static void ejercicio22() {
+
+    }
+
+    public static void ejercicio23() {
+
+    }
+
+    public static void ejercicio24() {
+
+    }
+
+    public static void ejercicio25() {
+
+    }
+
+    public static void ejercicio26() {
+
+    }
+
+    public static void ejercicio27() {
+
+    }
+
+    public static void ejercicio28() {
+
+    }
+
+    public static void ejercicio29() {
+
+    }
+
+    public static void ejercicio30() {
+
+    }
+
     public static void main(String[] args) throws Exception {
 
         // ejercicio1();
         // ejercicio2();
         // ejercicio3();
         // ejercicio4();
-        ejercicio5();
+        // ejercicio5();
         // ejercicio6();
         // ejercicio7();
         // ejercicio8();
@@ -315,13 +478,23 @@ class Bucles20Ejercicios {
         // ejercicio11();
         // ejercicio12();
         // ejercicio13();
-        // ejercicio14();
+        ejercicio14();
         // ejercicio15();
         // ejercicio16();
         // ejercicio17();
         // ejercicio18();
         // ejercicio19();
         // ejercicio20();
+        // ejercicio21();
+        // ejercicio22();
+        // ejercicio23();
+        // ejercicio24();
+        // ejercicio25();
+        // ejercicio26();
+        // ejercicio27();
+        // ejercicio28();
+        // ejercicio29();
+        // ejercicio30();
 
     }
 }
