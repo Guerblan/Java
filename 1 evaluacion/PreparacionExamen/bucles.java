@@ -378,11 +378,11 @@ class Bucles20Ejercicios {
          */
         Scanner sc = new Scanner(System.in);
         int opcion = 0;
-        opcion = sc.nextInt();
-        System.out.println("1 - Saludar");
-        System.out.println("1 - Mostrar número 10");
-        System.out.println("1 - Salir");
+        String menu = "\n Menú: " + "\n 1_Saludar " + "\n 2_Mostrar número 10 " + "\n 3_Salir" + "\n "
+                + "\n Introduce una opción";
         while (opcion != 3) {
+            System.out.println(menu);
+            opcion = sc.nextInt();
             switch (opcion) {
                 case 1:
                     System.out.println("Hola");
@@ -400,10 +400,49 @@ class Bucles20Ejercicios {
     }
 
     public static void ejercicio15() {
+        /*
+         * Haz un programa que:
+         * 
+         * Tenga un número secreto (por ahora fijo)
+         * Pida números al usuario
+         * Repita hasta que el usuario adivine el número
+         * Cuando acierte, muestre:
+         * Correcto
+         */
+        Scanner sc = new Scanner(System.in);
+        int numsecret = 4;
+        int num = 0;
+        while (num != numsecret) {
+            System.out.println("Intenta acertar el número secreto!");
+            num = sc.nextInt();
+            if (num == numsecret) {
+                System.out.println("Correcto!");
+            }
+        }
 
     }
 
     public static void ejercicio16() {
+        /*
+         * Haz un programa que:
+         * 
+         * Tenga un número secreto (por ejemplo 7)
+         * Permita máximo 3 intentos
+         * Si acierta:
+         * Correcto
+         * Si falla los 3 intentos:
+         * Has perdido
+         */
+        int numsecret = 7;
+
+        for (int i = 1; i <= 3; i++) {
+            System.out.println("Intenta acertar el número");
+            int num = sc.nextInt();
+            if (num == numsecret) {
+                System.out.println("Correcto");
+                break;
+            }
+        }
 
     }
 
@@ -478,8 +517,8 @@ class Bucles20Ejercicios {
         // ejercicio11();
         // ejercicio12();
         // ejercicio13();
-        ejercicio14();
-        // ejercicio15();
+        // ejercicio14();
+        ejercicio15();
         // ejercicio16();
         // ejercicio17();
         // ejercicio18();
