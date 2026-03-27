@@ -434,19 +434,216 @@ class Bucles20Ejercicios {
          * Has perdido
          */
         int numsecret = 7;
+        boolean acertado = False;
 
         for (int i = 1; i <= 3; i++) {
             System.out.println("Intenta acertar el número");
             int num = sc.nextInt();
             if (num == numsecret) {
                 System.out.println("Correcto");
+                acertado = True;
                 break;
             }
+        }
+        if (acertado == False) {
+            System.out.println("Has perdido");
         }
 
     }
 
     public static void ejercicio17() {
+        /*
+         * Crea un programa en Java que funcione como un conversor de temperaturas
+         * mediante un menú repetitivo.
+         * 
+         * El programa debe permitir convertir temperaturas entre diferentes unidades,
+         * guardar un historial de conversiones realizadas y mostrar estadísticas al
+         * usuario.
+         * 
+         * El programa debe ejecutarse continuamente hasta que el usuario elija salir.
+         * 
+         * Menú principal
+         * 
+         * El programa debe mostrar este menú:
+         * 
+         * 1. Celsius a Fahrenheit
+         * 2. Fahrenheit a Celsius
+         * 3. Celsius a Kelvin
+         * 4. Kelvin a Celsius
+         * 5. Ver historial
+         * 6. Ver estadísticas
+         * 7. Salir
+         * 
+         * Después de mostrar el menú:
+         * 
+         * El usuario introduce una opción.
+         * Se ejecuta la operación correspondiente.
+         * El menú vuelve a mostrarse.
+         * Solo termina cuando se elige Salir.
+         * 
+         * Debes usar:
+         * 
+         * do while (haz mientras)
+         * porque el menú debe ejecutarse al menos una vez.
+         * 
+         * Conversiones que debe realizar
+         * 
+         * Debes implementar estas conversiones:
+         * 
+         * Celsius a Fahrenheit
+         * 
+         * Fórmula:
+         * 
+         * F = C × 9 / 5 + 32
+         * Fahrenheit a Celsius
+         * 
+         * Fórmula:
+         * 
+         * C = (F - 32) × 5 / 9
+         * Celsius a Kelvin
+         * 
+         * Fórmula:
+         * 
+         * K = C + 273.15
+         * Kelvin a Celsius
+         * 
+         * Fórmula:
+         * 
+         * C = K - 273.15
+         * Validaciones obligatorias
+         * 
+         * Antes de hacer cualquier conversión debes validar la temperatura introducida.
+         * 
+         * No se pueden aceptar:
+         * 
+         * temperaturas menores que -273.15 en Celsius
+         * temperaturas menores que 0 en Kelvin
+         * 
+         * Si el usuario introduce un valor inválido:
+         * 
+         * Debes mostrar un mensaje de error
+         * No debes realizar la conversión
+         * Debes volver al menú
+         * Historial de conversiones
+         * 
+         * Cada conversión correcta debe guardarse en un historial.
+         * 
+         * Cada línea del historial debe contener:
+         * 
+         * Tipo de conversión | Valor original | Resultado
+         * 
+         * Ejemplo:
+         * 
+         * C -> F | 25.0 | 77.0
+         * F -> C | 100.0 | 37.78
+         * C -> K | 0.0 | 273.15
+         * 
+         * El historial debe mostrarse cuando el usuario elija:
+         * 
+         * 5. Ver historial
+         * 
+         * Si aún no hay conversiones:
+         * 
+         * Debes mostrar:
+         * 
+         * No hay conversiones registradas
+         * Estadísticas obligatorias
+         * 
+         * Cuando el usuario elija:
+         * 
+         * 6. Ver estadísticas
+         * 
+         * Debes mostrar:
+         * 
+         * Total de conversiones realizadas
+         * 
+         * Ejemplo:
+         * 
+         * Total conversiones: 12
+         * Número de conversiones de cada tipo
+         * 
+         * Debes contar:
+         * 
+         * Celsius → Fahrenheit
+         * Fahrenheit → Celsius
+         * Celsius → Kelvin
+         * Kelvin → Celsius
+         * 
+         * Ejemplo:
+         * 
+         * C -> F: 4
+         * F -> C: 3
+         * C -> K: 2
+         * K -> C: 3
+         * Media de temperaturas introducidas
+         * 
+         * Debes calcular:
+         * 
+         * media = sumaTemperaturas / totalConversiones
+         * 
+         * Solo deben contarse temperaturas válidas.
+         * 
+         * Temperatura mayor introducida
+         * 
+         * Debes guardar la mayor temperatura que haya introducido el usuario.
+         * 
+         * Temperatura menor introducida
+         * 
+         * Debes guardar la menor temperatura que haya introducido el usuario.
+         * 
+         * Restricciones técnicas obligatorias
+         * 
+         * Debes usar:
+         * 
+         * switch (conmutador)
+         * do while (haz mientras)
+         * variables acumuladoras
+         * contadores
+         * validaciones con if (si)
+         * 
+         * No puedes:
+         * 
+         * hacer el programa sin menú
+         * terminar el programa sin elegir "Salir"
+         */
+        Scanner sc = new Scanner(System.in);
+        String menu = "Elije una opción:" + "\n 1.Celsius-->Farenhait" + "\n 2.Farenhait-->Celsius"
+                + "\n 3.Celsius-->Kelvin" +
+                "\n 4.Kelvin-->Celsius" + "\n 5.Ver historial" + "\n 6.Ver estadisticas" + "\n 7.Salir";
+        int opcion;
+        double temp;
+        double tempConver;
+        do {
+
+            System.out.println(menu);
+            opcion = sc.nextInt();
+
+            switch (opcion) {
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+                case 6:
+
+                    break;
+                case 7:
+
+                    break;
+                default:
+                    break;
+            }
+        } while (opcion != 7);
 
     }
 
@@ -518,9 +715,9 @@ class Bucles20Ejercicios {
         // ejercicio12();
         // ejercicio13();
         // ejercicio14();
-        ejercicio15();
+        // ejercicio15();
         // ejercicio16();
-        // ejercicio17();
+        ejercicio17();
         // ejercicio18();
         // ejercicio19();
         // ejercicio20();
