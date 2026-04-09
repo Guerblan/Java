@@ -434,20 +434,51 @@ class Bucles20Ejercicios {
          * Has perdido
          */
         int numsecret = 7;
-
+        boolean acertado = false;
         for (int i = 1; i <= 3; i++) {
             System.out.println("Intenta acertar el número");
             int num = sc.nextInt();
             if (num == numsecret) {
                 System.out.println("Correcto");
+                acertado = true;
                 break;
             }
+        }
+        if (acertado == false) {
+            System.out.println("Has perdido");
         }
 
     }
 
     public static void ejercicio17() {
-
+        /*
+         * Haz un programa que:
+         * 
+         * Tenga un número secreto (por ejemplo 6)
+         * Pida números hasta acertar
+         * Si el número es menor que el secreto:
+         * El número secreto es mayor
+         * Si el número es mayor:
+         * El número secreto es menor
+         * Cuando acierte:
+         * Correcto
+         */
+        Scanner sc = new Scanner(System.in);
+        int numsecret = 9;
+        int num = 0;
+        boolean acertado = false;
+        while (acertado == false) {
+            System.out.println("Dime un número");
+            num = sc.nextInt();
+            if (num < numsecret) {
+                System.out.println("El número secrot es mayor");
+            } else if (num > numsecret) {
+                System.out.println("El número secreto es menor");
+            } else {
+                System.out.println("Correcto");
+                acertado = true;
+            }
+        }
     }
 
     public static void ejercicio18() {
