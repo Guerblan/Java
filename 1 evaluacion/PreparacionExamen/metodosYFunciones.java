@@ -114,9 +114,33 @@ class metodosYFunciones {
         tablaMultiplicar(n);
     }
 
-    public static void ejercicio6() {
+    /*
+     * Escribe un método llamado esPar que reciba un número entero y muestre por
+     * consola si el número es par o impar.
+     */
 
+    public static void parOimpar(int n) {
+        if (n % 2 == 0) {
+            System.out.println(n + "es par");
+        } else {
+            System.out.println(n + "es impar");
+        }
     }
+
+    public static void ejercicio6() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Dime un número y te diré si es par o impar");
+        int n = sc.nextInt();
+        parOimpar(n);
+    }
+
+    /*
+     * Ejercicio 2. Comparador de números
+     * Implementa métodos que pidan dos números, determinen cuál es mayor y cuál es
+     * menor, y
+     * muestren el resultado.
+     * 
+     */
 
     public static void ejercicio7() {
 
@@ -221,8 +245,8 @@ class metodosYFunciones {
         // eco();
         // ejercicio3();
         // ejercicio4();
-        ejercicio5();
-        // ejercicio6();
+        // ejercicio5();
+        ejercicio6();
         // ejercicio7();
         // ejercicio8();
         // ejercicio9();
