@@ -11,6 +11,7 @@ class Arrays {
          * Asigna valores manualmente y muestra todos los valores por pantalla usando un
          * for.
          */
+
     }
 
     public static void ejercicio2() {
