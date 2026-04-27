@@ -1,7 +1,7 @@
 import java.util.Scanner;
-//import java.util.Arrays;
+import java.util.Arrays;
 
-class Arrays {
+class ArraysRepaso {
 
     public static void ejercicio1() {
         /*
@@ -116,21 +116,83 @@ class Arrays {
          * int array[] = { 3, 2, 5, 8, 5, 7, 8 };
          * System.out.println(Arrays.sort(array));
          */
+        Scanner sc = new Scanner(System.in);
+        int array[] = new int[10];
+        for (int i = 0; i < array.length; i++) {
+            System.err.println("Mete un númmero");
+            array[i] = sc.nextInt();
 
-        int[] array = new int[] { 3, 2, 5, 8, 5, 7, 8 };
+        }
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i]);
+        }
+        System.out.println();
+
         Arrays.sort(array);
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i]);
+        }
     }
 
     public static void ejercicio6() {
-
+        /*
+         * Crea un vector con valores.
+         * 
+         * Haz una copia usando:
+         * 
+         * Arrays.copyOf()
+         * 
+         * Muestra ambos.
+         */
+        int array[] = { 3, 2, 5, 8, 5, 7, 8 };
+        int copia[] = Arrays.copyOf(array, array.length);
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + ",");
+        }
+        System.out.println();
+        for (int i = 0; i < copia.length; i++) {
+            System.out.print(copia[i] + ",");
+        }
     }
 
     public static void ejercicio7() {
-
+        /*
+         * Ejercicio 7 — Insertar un elemento en un vector (ALTA)
+         * 
+         * Tienes un vector.
+         * 
+         * Añade un número al final creando un vector nuevo.
+         */
+        int array[] = { 9, 2, 12, 8, 46, 7, 8 };
+        int copia[] = Arrays.copyOf(array, array.length + 1);
+        copia[copia.length - 1] = 1;
     }
 
     public static void ejercicio8() {
-
+        /*
+         * Ejercicio 8 — Eliminar un elemento (ALTA)
+         * 
+         * Dado un vector y un número:
+         * 
+         * Elimina ese número del vector.
+         * 
+         * Qué entrenas
+         * 
+         * Búsqueda
+         * Eliminación
+         * Copia sin un elemento
+         * 
+         * Esto viene del algoritmo de eliminación en vectores.
+         */
+        int array[] = { 4, 5, 2, 2, 10, 69, 74, 5, };
+        int num = 69;
+        int posicion = -1;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == num) {
+                posicion = i;
+            }
+        }
+        int copia[] = Arrays.copyOf(array, array.length - 1);
     }
 
     public static void ejercicio9() {
@@ -227,8 +289,8 @@ class Arrays {
         // ejercicio2();
         // ejercicio3();
         // ejercicio4();
-        ejercicio5();
-        // ejercicio6();
+        // ejercicio5();
+        ejercicio6();
         // ejercicio7();
         // ejercicio8();
         // ejercicio9();
