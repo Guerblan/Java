@@ -1,4 +1,5 @@
 import java.util.Scanner;
+//import java.util.Arrays;
 
 class Arrays {
 
@@ -11,23 +12,113 @@ class Arrays {
          * Asigna valores manualmente y muestra todos los valores por pantalla usando un
          * for.
          */
+        int vector[] = { 3, 2, 1, 1, 4 };
+        for (int i = 0; i < vector.length; i++) {
+            System.out.println(vector[i]);
+        }
 
     }
 
     public static void ejercicio2() {
+        /*
+         * Leer valores en un vector (FÁCIL)
+         * 
+         * Crea un vector de 10 posiciones.
+         * 
+         * Pide al usuario 10 números y guárdalos dentro del vector.
+         * 
+         * Después muestra el contenido.
+         */
+        Scanner sc = new Scanner(System.in);
+        int vector[] = new int[10];
 
+        for (int i = 0; i < vector.length; i++) {
+            System.out.println("Introduce un valor en el vector");
+            vector[i] = sc.nextInt();
+        }
+
+        for (int i = 0; i < vector.length; i++) {
+            System.out.println(vector[i]);
+        }
     }
 
     public static void ejercicio3() {
-
+        /*
+         * Ejercicio 3 — Calcular la suma y media (FÁCIL–MEDIA)
+         * 
+         * Pide 8 números y guárdalos en un vector.
+         * 
+         * Calcula:
+         * 
+         * La suma total
+         * La media
+         */
+        Scanner sc = new Scanner(System.in);
+        int suma = 0;
+        int resta = 0;
+        int array[] = new int[8];
+        for (int i = 0; i < array.length; i++) {
+            System.out.println("Introduce un número");
+            array[i] = sc.nextInt();
+            suma += array[i];
+            resta -= array[i];
+        }
+        System.out.println(suma);
+        System.out.println(resta);
     }
 
     public static void ejercicio4() {
+        /*
+         * Pide 10 números.
+         * 
+         * Después pide un número extra y busca si está dentro del vector.
+         * 
+         * Si está:
+         * 
+         * Mostrar la posición.
+         * 
+         * Si no:
+         * 
+         * Mostrar que no existe.
+         */
+        Scanner sc = new Scanner(System.in);
+        int array[] = new int[10];
+        for (int i = 0; i < array.length; i++) {
+            System.err.println("Mete un númmero");
+            array[i] = sc.nextInt();
 
+        }
+        int num;
+        System.out.println("Dame un número extra");
+        num = sc.nextInt();
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == num) {
+                System.out.println(i);
+            } else {
+                System.out.println("No existe");
+            }
+        }
     }
 
     public static void ejercicio5() {
+        /*
+         * Ejercicio 5 — Ordenar un vector (MEDIA)
+         * 
+         * Pide 10 números.
+         * 
+         * Ordénalos usando:
+         * 
+         * Arrays.sort()
+         * 
+         * Muestra el vector antes y después.
+         */
+        /*
+         * int array[] = { 3, 2, 5, 8, 5, 7, 8 };
+         * System.out.println(Arrays.sort(array));
+         */
 
+        int[] array = new int[] { 3, 2, 5, 8, 5, 7, 8 };
+        Arrays.sort(array);
     }
 
     public static void ejercicio6() {
@@ -136,7 +227,7 @@ class Arrays {
         // ejercicio2();
         // ejercicio3();
         // ejercicio4();
-        // ejercicio5();
+        ejercicio5();
         // ejercicio6();
         // ejercicio7();
         // ejercicio8();
