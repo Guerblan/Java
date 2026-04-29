@@ -87,7 +87,6 @@ public static void ejercicio17() {
 
 // ===== Practica extensa integrada =====
 
-
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -1705,4 +1704,3 @@ class VectoresPracticaAlto {
 
     }
 }
-

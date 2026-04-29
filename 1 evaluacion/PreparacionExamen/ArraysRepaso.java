@@ -208,14 +208,87 @@ class ArraysRepaso {
     }
 
     public static void ejercicio9() {
+        /*
+         * Escribe un programa que pida 10 números por teclado,los almacene en un array
+         * y que luego muestre el máximo valor,el mínimo y las posiciones que ocupa en
+         * el array.
+         */
+        Scanner sc = new Scanner(System.in);
+        int num;
+
+        int posMax = 0;
+        int posMin = 0;
+        int array[] = new int[10];
+        int max = array[0];
+        int min = array[0];
+        for (int i = 0; i < array.length; i++) {
+            num = sc.nextInt();
+            array[i] = num;
+        }
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+                posMax = i;
+            }
+            if (array[i] < min) {
+                min = array[i];
+                posMin = i;
+            }
+        }
+        System.out.println("El máximo valor del array es : " + max + " que está en la poscición : " + posMax);
+        System.out.println("El mínimo valor del array es : " + min + " que está en la poscición : " + posMin);
 
     }
 
     public static void ejercicio10() {
-
+        /*
+         * 
+         * 
+         * Realiza un programa que dado un array desordenado lo ordene y lo muestre por
+         * consola siguiendo
+         * el algoritmo que desees.
+         * 
+         */
+        int array[] = { 3, 5, 2, 1, 9, 7, 8, 6 };
+        System.out.println(Arrays.toString(array));
+        Arrays.sort(array);
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + ";");
+        }
     }
 
     public static void ejercicio11() {
+
+        /*
+         * Define un vector de 10 posiciones e introduce las 5 primeras posiciones con
+         * numeros enteros.
+         * 
+         * Borra cualquier posición y lo muestras.
+         * 
+         * Borra el elemento que tenga como valor 8
+         */
+        Scanner sc = new Scanner(System.in);
+        int vector[] = new int[10];
+        int num;
+        for (int i = 0; i < 5; i++) {
+            num = sc.nextInt();
+            vector[i] = num;
+        }
+        System.out.println("Dime qué posición quieres borrar");
+        int posicion = sc.nextInt();
+        for (int i = posicion; i < vector.length - 1; i++) {
+            vector[i] = vector[i + 1];
+        }
+        vector[vector.length - 1] = 0;
+
+        for (int i = 0; i < vector.length; i++) {
+            if (vector[i] == 8) {
+                for (int j = i; j < vector.length - 1; j++) {
+                    vector[j] = vector[j + 1];
+                }
+            }
+        }
+        vector[vector.length - 1] = 0;
 
     }
 
