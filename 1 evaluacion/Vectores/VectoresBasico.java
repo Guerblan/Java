@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 class VectoresBasico {
 
-public static void ejercicio1() {
+    public static void ejercicio1() {
         /*
          * Reliza un programa que pida al usuario un numero natural n,a partir de ese
          * número
@@ -257,7 +257,7 @@ public static void ejercicio2(){
     }
 }
 
-public static void ejercicio3() {
+    public static void ejercicio3() {
         /*
          * 3_ Realiza un programa que pida números enteros postivos al usuario y los
          * almacene en un array a ,
@@ -267,7 +267,7 @@ public static void ejercicio3() {
          */
     }
 
-public static void ejercicio4() {
+    public static void ejercicio4() {
         /*
          * 4_Realiza un programa que pida al ususario un array de 10 elementos y muestre
          * por pantalla un array b que contenga los
@@ -276,7 +276,7 @@ public static void ejercicio4() {
          */
     }
 
-public static void ejercicio5() {
+    public static void ejercicio5() {
 
         /*
          * Realiza un programa que pida al usuario un congunto de números para un array

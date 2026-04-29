@@ -185,14 +185,26 @@ class ArraysRepaso {
          * Esto viene del algoritmo de eliminación en vectores.
          */
         int array[] = { 4, 5, 2, 2, 10, 69, 74, 5, };
-        int num = 69;
+        System.out.println("El array es : " + Arrays.toString(array));
+        System.out.println("Dime un número");
+        int num = sc.nextInt();
         int posicion = -1;
         for (int i = 0; i < array.length; i++) {
             if (array[i] == num) {
                 posicion = i;
             }
         }
+        // int copia[] = Arrays.copyOf(array, array.length - 1);
+
         int copia[] = Arrays.copyOf(array, array.length - 1);
+        int j = 0;
+        for (int i = 0; i < copia.length; i++) {
+            if (posicion != i) {
+                copia[j] = array[i];
+                j++;
+            }
+        }
+
     }
 
     public static void ejercicio9() {
