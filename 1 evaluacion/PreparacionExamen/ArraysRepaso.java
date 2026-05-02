@@ -293,7 +293,42 @@ class ArraysRepaso {
     }
 
     public static void ejercicio12() {
-
+        /*
+         * Define un vector de 10 posiciones e introduce las primeras 6 posiciones con
+         * números enteros.
+         * 
+         * Muestra el vector por pantalla.
+         * 
+         * Elimina la posición 3 del vector (desplazando los elementos hacia la
+         * izquierda).
+         * 
+         * Muestra el vector actualizado.
+         * 
+         * Busca un número específico introducido por el usuario y sustitúyelo por un 0.
+         * 
+         * Muestra el vector final tras la sustitución.
+         */
+        int vector[] = new int[10];
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < 6; i++) {
+            System.out.println("Introduce valores en el vector");
+            int num = sc.nextInt();
+            vector[i] = num;
+        }
+        System.out.println(Arrays.toString(vector));
+        for (int i = 3; i < vector.length - 1; i++) {
+            vector[i] = vector[i + 1];
+        }
+        vector[vector.length - 1] = 0;
+        System.out.println(Arrays.toString(vector));
+        System.out.println("Introduce un número a eliminar del vector");
+        int num1 = sc.nextInt();
+        for (int i = 0; i < vector.length; i++) {
+            if (vector[i] == num1) {
+                vector[i] = 0;
+            }
+        }
+        System.out.println(Arrays.toString(vector));
     }
 
     public static void ejercicio13() {
