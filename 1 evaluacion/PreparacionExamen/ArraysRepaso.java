@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.Random;
 
 class ArraysRepaso {
 
@@ -332,19 +333,96 @@ class ArraysRepaso {
     }
 
     public static void ejercicio13() {
-
+        /*
+         * Declara una matriz de enteros de 3 filas y 4 columnas. Después, recórrela con
+         * dos for y muestra todos sus valores por pantalla.
+         */
+        int[][] matriz = new int[3][4];
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println(" ");
+        }
     }
 
     public static void ejercicio14() {
 
+        /*
+         * Ejercicio de este tipo:
+         * 
+         * Crea una matriz de 4 filas y 5 columnas. Rellénala con números aleatorios del
+         * 1 al 20. Después, muestra la matriz completa y pide al usuario qué fila
+         * quiere ver.
+         * 
+         * El usuario debe introducir una fila del 1 al 4. Luego muestra solo esa fila.
+         */
+        int[][] matriz = new int[4][5];
+        Random random = new Random();
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                matriz[i][j] = random.nextInt(20) + 1;
+            }
+        }
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println(" ");
+        }
+        System.out.println("Introduce un número de fila");
+        int num = sc.nextInt();
+        for (int j = 0; j < matriz[num - 1].length; i++) {
+            System.out.println(matriz[num - 1][j]);
+        }
     }
 
     public static void ejercicio15() {
-
+        /*
+         * 
+         * 
+         * Crea una matriz de 3 filas y 6 columnas. Rellénala con números aleatorios del
+         * 10 al 30. Muestra la matriz completa. Después pide al usuario qué fila quiere
+         * ver, del 1 al 3, y muestra solo esa fila.
+         */
+        Random random = new Random();
+        Scanner sc = new Scanner(System.in);
+        int[][] matriz = new int[3][6];
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                matriz[i][j] = random.nextInt(20) + 10;
+            }
+        }
+        System.out.println("Introduce el número de fila a mostrar");
+        int fila = sc.nextInt();
+        for (int j = 0; J < matriz[fila - 1].length; i++) {
+            System.out.println(matriz[fila - 1][j] + " ");
+        }
+        System.out.println();
     }
 
     public static void ejercicio16() {
-
+        /*
+         * Crea una matriz de 4 filas y 5 columnas. Rellénala con números aleatorios del
+         * 1 al 50. Muestra la matriz completa. Después pide al usuario qué columna
+         * quiere ver, del 1 al 5, y muestra solo esa columna.
+         */
+        int[][] matriz = new int[4][5];
+        Scanner sc = new Scanner(System.in);
+        Random random = new andom();
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                matriz[i][j] = random.nextInt(50) + 1;
+                System.out.println(" ");
+            }
+            System.out.println();
+        }
+        System.out.println("introduce el número de columna a imprimir");
+        int columna = sc.nextInt();
+        for (int i = 0; i < matriz.length; i++) {
+            System.out.println(matriz[i][columna - 1]);
+        }
     }
 
     public static void ejercicio17() {
@@ -410,14 +488,14 @@ class ArraysRepaso {
         // ejercicio3();
         // ejercicio4();
         // ejercicio5();
-        ejercicio6();
+        // ejercicio6();
         // ejercicio7();
         // ejercicio8();
         // ejercicio9();
         // ejercicio10();
         // ejercicio11();
         // ejercicio12();
-        // ejercicio13();
+        ejercicio13();
         // ejercicio14();
         // ejercicio15();
         // ejercicio16();
