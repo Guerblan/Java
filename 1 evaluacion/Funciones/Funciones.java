@@ -1,40 +1,83 @@
+import java.util.Scanner;
+
 class Funciones {
 
-    public static void ejercicio1() {
+    public static void holaMundo() {
         /*
          * 1. Realiza un metodo llamado holaMundo que al ser llamada
          * muestre por consola el mensaje "Hola Mundo!".
          */
+        System.out.println("Hola Mundo!");
+
     }
 
-    public static void ejercicio2() {
+    public static int suma(int num, int num1) {
         /*
          * 2. Realiza una funcion llamada suma que sume dos numeros enteros
          * y te devuelva el resultado, posteriormente llamala desde el main y
          * muestra su resultado.
          */
+        return num + num1;
+
     }
 
-    public static void ejercicio3() {
+    public static void eco(int n) {
         /*
          * 3. Realiza un metodo llamado eco con un parametro de entrada n,
          * que al ser llamada muestre por consola el mensaje "ECO" un
          * numero n de veces.
          */
+        for (int i = 0; i < n; i++) {
+            System.out.println("ECO");
+        }
+
     }
 
-    public static void ejercicio4() {
+    public static void mayorOMenor(int a, int b) {
         /*
-         * 4. Implementa metodos que pidan dos numeros, determinen cual
+         * 4. Implementa unmétodo que pidan dos numeros, determinen cual
          * es mayor y cual es menor, y muestren el resultado.
          */
+        if (a > b) {
+            System.out.println(a + " es mayor que b");
+        } else if (b > a) {
+            System.out.println(b + " es mayor que a");
+        } else {
+            System.out.println("Ambos número son iguales");
+        }
+
     }
 
     public static void ejercicio5() {
-        /*
-         * 5. Crea metodos para leer una edad, clasificarla en categorias
-         * (nino, adolescente, adulto, mayor) y mostrar el resultado.
-         */
+        int edad = leerEdad();
+        mostrarResultado(edad);
+    }
+    /*
+     * 5. Crea metodos para leer una edad, clasificarla en categorias
+     * (nino, adolescente, adulto, mayor) y mostrar el resultado.
+     */
+
+    public static int leerEdad() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce una edad");
+        int edad = sc.nextInt();
+        return edad;
+    }
+
+    public static String categoria(int edad) {
+        if (edad < 12) {
+            return "nino";
+        } else if (edad < 18) {
+            return "adolescente";
+        } else if (edad < 60) {
+            return "adulto";
+        } else {
+            return "mayor";
+        }
+    }
+
+    public static void mostrarResultado(int edad) {
+        System.out.println(categoria(edad));
     }
 
     public static void ejercicio6() {
@@ -42,17 +85,46 @@ class Funciones {
          * 6. Crea un metodo que valide un numero entero positivo y otro
          * que muestre su tabla de multiplicar.
          */
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce un número");
+        int n = sc.nextInt();
+        mostrarTabla(n);
     }
 
-    public static void ejercicio7() {
+    public static boolean esPositivo(int n) {
+        if (n > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static void mostrarTabla(int n) {
+        if (esPositivo(n)) {
+            for (int i = 1; i <= 10; i++) {
+                System.out.println(i * n);
+            }
+        } else {
+            System.out.println("No es positivo");
+        }
+
+    }
+
+    public static void mostrarIntermedios(int a, int b) {
         /*
          * 7. Escribe un metodo llamado mostrarIntermedios que tenga dos
          * parametros de entrada a y b (numeros enteros) y muestre todos
          * los numeros pares entre ambos numeros (a y b inclusive).
          */
+        for (int i = a; i <= b; i++) {
+            if (i % 2 == 0) {
+                System.out.println(i);
+            }
+        }
+
     }
 
-    public static void ejercicio8() {
+    public static double areaDeCirculo(int r) {
         /*
          * 8. Realiza una funcion areaCirculo que reciba un parametro r y te
          * devuelva el area de un circulo de radio r.
@@ -60,6 +132,8 @@ class Funciones {
          * Nota: en Java podemos usar el numero pi con la constante de la
          * clase Math.PI.
          */
+        double area = Math.PI * Math.pow(r, 2);
+        return area;
     }
 
     public static void ejercicio9() {
@@ -68,6 +142,65 @@ class Funciones {
          * geometricas (cuadrado, rectangulo y circulo) y un metodo
          * menu() que gestione las opciones.
          */
+
+    }
+
+    public static double areaCuadrado(int lado) {
+        double areaCuadrad = Math.pow(lado, 2);
+        return areaCuadrad;
+    }
+
+    public static int areaRectangulo(int ladoLar, int ladoPeq) {
+        int areaRectangulo = ladoLar * ladoPeq;
+        return areaRectangulo;
+    }
+
+    public static double areaCirculo(int r) {
+        double areaCirc = Math.PI * Math.pow(r, 2);
+        return areaCirc;
+    }
+
+    public static void menu() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("CALCULADOR DE ÁREAS");
+        System.out.println("--------------------------");
+        System.out.println("1_Calcular área cuadrado");
+        System.out.println("2_Calcular área rectángulo");
+        System.out.println("3_Calcular área círculo");
+        System.out.println("4_Salir");
+        System.out.println("--------------------------");
+        int opcion = 0;
+        while (opcion != 4) {
+            System.out.println("Elige qué area quieres calcular");
+            opcion = sc.nextInt();
+            switch (opcion) {
+                case 1:
+                    System.out.println("Introduce el lado");
+                    int lado = sc.nextInt();
+                    System.out.println(areaCuadrado(lado));
+                    break;
+                case 2:
+                    System.out.println("Introduce el lado pequeño del rectángulo");
+                    int ladoPeq = sc.nextInt();
+                    System.out.println("Introduce el lado largo del rectángulo");
+                    int ladoLar = sc.nextInt();
+                    System.out.println(areaRectangulo(ladoLar, ladoPeq));
+
+                    break;
+                case 3:
+                    System.out.println("Introduce el radio del círculo");
+                    int r = sc.nextInt();
+                    System.out.println(areaCirculo(r));
+                    break;
+                case 4:
+                    System.out.println("Saliendo del programa");
+
+                    break;
+                default:
+                    break;
+            }
+        }
+
     }
 
     public static void ejercicio10() {
@@ -77,14 +210,50 @@ class Funciones {
          * ser un metodo independiente. Desde el main, pide dos numeros
          * y una operacion al usuario.
          */
+
     }
 
     public static void ejercicio11() {
         /*
          * 11. Simula un inicio de sesion con tres metodos:
+         * 
+         * 
+         * 
+         * 
          * validarUsuario, mostrarResultado y ejecutarPrograma.
          * El metodo main solo debe llamar a ejecutarPrograma().
          */
+        ejecutarPrograma();
+    }
+
+    public static boolean validarUsuario() {
+        Scanner sc = new Scanner(System.in);
+        boolean usuarioValido = true;
+        String usuario = "";
+        System.out.println("Introduce el usuario");
+        usuario = sc.nextLine();
+        if (usuario.length() == 0) {
+            usuarioValido = false;
+            return usuarioValido;
+        } else {
+
+            return usuarioValido;
+        }
+
+    }
+
+    public static void mostrarResultado(boolean validarUsuario) {
+        if (!validarUsuario) {
+            System.out.println("Error al introducir usuario");
+        } else {
+            System.out.println("Usuario validado con éxito");
+        }
+    }
+
+    public static void ejecutarPrograma() {
+
+        mostrarResultado(validarUsuario());
+
     }
 
     public static void ejercicio12() {
@@ -92,6 +261,38 @@ class Funciones {
          * 12. Implementa metodos para pedir tres notas, calcular la media,
          * obtener la calificacion textual y mostrar los resultados.
          */
+
+        mostrarResultados();
+    }
+
+    public static double obtenerNota() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce una primera nota");
+        double nota1 = sc.nextDouble();
+        System.out.println("Introduce una segunda nota");
+        double nota2 = sc.nextDouble();
+        System.out.println("Introduce una tercera nota");
+        double nota3 = sc.nextDouble();
+        double media = (nota1 + nota2 + nota3) / 3;
+        return media;
+    }
+
+    public static String obtenerCalificacionTextual(double media) {
+        String calificacion1 = "Suspenso";
+        String calificacion2 = "Aprobado";
+        String calificacion3 = "Sobresaliente";
+        if (media < 5) {
+            return calificacion1;
+        } else if (media >= 5 && media <= 8) {
+            return calificacion2;
+        } else {
+            return calificacion3;
+        }
+    }
+
+    public static void mostrarResultados() {
+
+        System.out.println(obtenerCalificacionTextual(obtenerNota()));
     }
 
     public static void ejercicio13() {
@@ -306,8 +507,8 @@ class Funciones {
     }
 
     public static void main(String[] args) throws Exception {
-        // ejercicio1();
-        // ejercicio2();
+        // holaMundo();
+        // System.out.println(suma(3, 5));
         // ejercicio3();
         // ejercicio4();
         // ejercicio5();
