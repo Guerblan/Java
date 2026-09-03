@@ -1072,6 +1072,108 @@ class Bucles {
         }
     }
 
+    // Ejercicios incorporados desde UT3_2_Bucles.java.
+    public static void ejercicio59() {
+        /* Lee numeros y muestra su cuadrado hasta introducir uno negativo. */
+        Scanner sc = new Scanner(System.in);
+        int num;
+
+        System.out.println("Dime un numero y te dare su cuadrado mientras no sea negativo");
+        while ((num = sc.nextInt()) >= 0) {
+            System.out.println("El cuadrado de " + num + " es " + (num * num));
+        }
+    }
+
+    public static void ejercicio60() {
+        /* Lee numeros hasta uno negativo y calcula la media de los no negativos. */
+        Scanner sc = new Scanner(System.in);
+        double suma = 0;
+        int cantidad = 0;
+        double num;
+
+        System.out.println("Dime numeros y calculare la media; escribe uno negativo para terminar");
+        while ((num = sc.nextDouble()) >= 0) {
+            suma += num;
+            cantidad++;
+        }
+
+        if (cantidad > 0) {
+            System.out.println("La media de los numeros es " + (suma / cantidad));
+        } else {
+            System.out.println("No se introdujeron numeros no negativos");
+        }
+    }
+
+    public static void ejercicio61() {
+        /* Muestra el producto de los diez primeros numeros impares. */
+        long producto = 1;
+
+        for (int impar = 1; impar <= 19; impar += 2) {
+            producto *= impar;
+        }
+
+        System.out.println("La multiplicacion de los 10 primeros impares es " + producto);
+    }
+
+    public static void ejercicio62() {
+        /* Lee diez numeros y muestra las medias de positivos y negativos, y los ceros. */
+        Scanner sc = new Scanner(System.in);
+        int sumaPositivos = 0;
+        int cantidadPositivos = 0;
+        int sumaNegativos = 0;
+        int cantidadNegativos = 0;
+        int ceros = 0;
+
+        System.out.println("Dame 10 numeros");
+        for (int i = 0; i < 10; i++) {
+            int num = sc.nextInt();
+
+            if (num > 0) {
+                sumaPositivos += num;
+                cantidadPositivos++;
+            } else if (num < 0) {
+                sumaNegativos += num;
+                cantidadNegativos++;
+            } else {
+                ceros++;
+            }
+        }
+
+        if (cantidadPositivos > 0) {
+            System.out.println("La media de los numeros positivos es "
+                    + (sumaPositivos / (double) cantidadPositivos));
+        }
+        if (cantidadNegativos > 0) {
+            System.out.println("La media de los numeros negativos es "
+                    + (sumaNegativos / (double) cantidadNegativos));
+        }
+        System.out.println("Has introducido " + ceros + " ceros");
+    }
+
+    public static void ejercicio63() {
+        /* Pide una cantidad de sueldos y muestra el sueldo maximo introducido. */
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Dime cuantos sueldos quieres introducir");
+        int cantidad = sc.nextInt();
+
+        if (cantidad <= 0) {
+            System.out.println("Debes introducir al menos un sueldo");
+            return;
+        }
+
+        int sueldoMaximo = Integer.MIN_VALUE;
+        System.out.println("Introduce " + cantidad + " sueldos");
+        for (int i = 0; i < cantidad; i++) {
+            int sueldo = sc.nextInt();
+            if (sueldo > sueldoMaximo) {
+                sueldoMaximo = sueldo;
+            }
+        }
+
+        System.out.println("El sueldo maximo es: " + sueldoMaximo + " euros");
+    }
+
     public static void main(String[] args) throws Exception {
         // ejercicio1();
         // ejercicio2();
@@ -1131,5 +1233,10 @@ class Bucles {
         // ejercicio56();
         // ejercicio57();
         // ejercicio58();
+        // ejercicio59();
+        // ejercicio60();
+        // ejercicio61();
+        // ejercicio62();
+        // ejercicio63();
     }
 }
