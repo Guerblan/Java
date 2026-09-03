@@ -958,6 +958,120 @@ class Bucles {
     public static void ejercicio50() {
     }
 
+    // Ejercicios incorporados desde PreparacionExamen/bucles.java.
+    public static void ejercicio51() {
+        /* Muestra los numeros impares entre 0 y 20. */
+        for (int i = 1; i <= 20; i += 2) {
+            System.out.println(i);
+        }
+    }
+
+    public static void ejercicio52() {
+        /* Muestra los numeros del 1 al 10 y calcula su suma. */
+        int suma = 0;
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i);
+            suma += i;
+        }
+
+        System.out.println("Suma: " + suma);
+    }
+
+    public static void ejercicio53() {
+        /* Muestra los numeros pares entre 1 y 50. */
+        for (int i = 2; i <= 50; i += 2) {
+            System.out.println(i);
+        }
+    }
+
+    public static void ejercicio54() {
+        /* Muestra las tablas de multiplicar del 1 al 5. */
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Tabla del " + i);
+            for (int j = 1; j <= 5; j++) {
+                System.out.println(i + " x " + j + " = " + (i * j));
+            }
+            System.out.println();
+        }
+    }
+
+    public static void ejercicio55() {
+        /* Lee diez numeros y muestra la suma de los que son positivos. */
+        Scanner sc = new Scanner(System.in);
+        int suma = 0;
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Introduce un numero:");
+            int numero = sc.nextInt();
+            if (numero > 0) {
+                suma += numero;
+            }
+        }
+
+        System.out.println("Suma de positivos: " + suma);
+    }
+
+    public static void ejercicio56() {
+        /* Lee numeros hasta introducir 0 y muestra su suma. */
+        Scanner sc = new Scanner(System.in);
+        int suma = 0;
+        int numero;
+
+        do {
+            System.out.println("Introduce un numero (0 para terminar):");
+            numero = sc.nextInt();
+            suma += numero;
+        } while (numero != 0);
+
+        System.out.println("La suma total es: " + suma);
+    }
+
+    public static void ejercicio57() {
+        /* Cuenta cuantos numeros se introducen antes de escribir uno negativo. */
+        Scanner sc = new Scanner(System.in);
+        int contador = 0;
+        int numero;
+
+        do {
+            System.out.println("Introduce un numero negativo para terminar:");
+            numero = sc.nextInt();
+            if (numero >= 0) {
+                contador++;
+            }
+        } while (numero >= 0);
+
+        System.out.println("Numeros no negativos introducidos: " + contador);
+    }
+
+    public static void ejercicio58() {
+        /* Muestra un menu que permite saludar, mostrar el 10 o salir. */
+        Scanner sc = new Scanner(System.in);
+        int opcion = 0;
+
+        while (opcion != 3) {
+            System.out.println("1. Saludar");
+            System.out.println("2. Mostrar numero 10");
+            System.out.println("3. Salir");
+            opcion = sc.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    System.out.println("Hola");
+                    break;
+                case 2:
+                    System.out.println(10);
+                    break;
+                case 3:
+                    System.out.println("Saliendo");
+                    break;
+                default:
+                    System.out.println("Opcion no valida");
+                    break;
+            }
+        }
+    }
+
     public static void main(String[] args) throws Exception {
         // ejercicio1();
         // ejercicio2();
@@ -967,7 +1081,7 @@ class Bucles {
         // ejercicio6();
         // ejercicio7();
         // ejercicio8();
-        ejercicio9();
+        // ejercicio9();
         // ejercicio10();
         // ejercicio11();
         // ejercicio12();
@@ -1009,5 +1123,13 @@ class Bucles {
         // ejercicio48();
         // ejercicio49();
         // ejercicio50();
+        // ejercicio51();
+        // ejercicio52();
+        // ejercicio53();
+        // ejercicio54();
+        // ejercicio55();
+        // ejercicio56();
+        // ejercicio57();
+        // ejercicio58();
     }
 }

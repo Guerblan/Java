@@ -2,39 +2,49 @@ import java.util.Scanner;
 
 class Funciones {
 
-    public static void holaMundo() {
+    // Ejercicios ordenados. Cada punto de entrada sigue el patron ejercicioN().
+
+    public static void ejercicio1() {
         /*
-         * 1. Realiza un metodo llamado holaMundo que al ser llamada
+         * 1. Realiza un metodo llamado ejercicio1 que al ser llamada
          * muestre por consola el mensaje "Hola Mundo!".
          */
         System.out.println("Hola Mundo!");
     }
 
-    public static int suma(int num, int num1) {
+    public static void ejercicio2() {
         /*
-         * 2. Realiza una funcion llamada suma que sume dos numeros enteros
-         * y te devuelva el resultado, posteriormente llamala desde el main y
-         * muestra su resultado.
+         * 2. Realiza una funcion que sume dos numeros enteros y muestra su resultado.
          */
+        System.out.println(suma(3, 5));
+    }
+
+    public static int suma(int num, int num1) {
         return num + num1;
     }
 
-    public static void eco(int n) {
+    public static void ejercicio3() {
         /*
-         * 3. Realiza un metodo llamado eco con un parametro de entrada n,
-         * que al ser llamada muestre por consola el mensaje "ECO" un
-         * numero n de veces.
+         * 3. Muestra por consola el mensaje "ECO" un numero n de veces.
          */
+        eco(3);
+    }
+
+    public static void eco(int n) {
         for (int i = 0; i < n; i++) {
             System.out.println("ECO");
         }
     }
 
-    public static void mayorOMenor(int a, int b) {
+    public static void ejercicio4() {
         /*
          * 4. Implementa un metodo que pidan dos numeros, determinen cual
          * es mayor y cual es menor, y muestren el resultado.
          */
+        mayorOMenor(4, 8);
+    }
+
+    public static void mayorOMenor(int a, int b) {
         if (a > b) {
             System.out.println(a + " es mayor que b");
         } else if (b > a) {
@@ -44,29 +54,36 @@ class Funciones {
         }
     }
 
-    public static void mostrarIntermedios(int a, int b) {
+    public static void ejercicio5() {
         /*
-         * 7. Escribe un metodo llamado mostrarIntermedios que tenga dos
-         * parametros de entrada a y b (numeros enteros) y muestre todos
-         * los numeros pares entre ambos numeros (a y b inclusive).
+         * 5. Crea metodos para leer una edad, clasificarla en categorias
+         * (nino, adolescente, adulto, mayor) y mostrar el resultado.
          */
-        for (int i = a; i <= b; i++) {
-            if (i % 2 == 0) {
-                System.out.println(i);
-            }
+        int edad = leerEdad();
+        mostrarResultadoEdad(edad);
+    }
+
+    public static int leerEdad() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce una edad");
+        int edad = sc.nextInt();
+        return edad;
+    }
+
+    public static String categoria(int edad) {
+        if (edad < 12) {
+            return "nino";
+        } else if (edad < 18) {
+            return "adolescente";
+        } else if (edad < 60) {
+            return "adulto";
+        } else {
+            return "mayor";
         }
     }
 
-    public static double areaDeCirculo(int r) {
-        /*
-         * 8. Realiza una funcion areaCirculo que reciba un parametro r y te
-         * devuelva el area de un circulo de radio r.
-         * Nota: En un circulo: area = pi * r * 2
-         * Nota: en Java podemos usar el numero pi con la constante de la
-         * clase Math.PI.
-         */
-        double area = Math.PI * Math.pow(r, 2);
-        return area;
+    public static void mostrarResultadoEdad(int edad) {
+        System.out.println(categoria(edad));
     }
 
     public static void ejercicio6() {
@@ -98,126 +115,34 @@ class Funciones {
         }
     }
 
-    public static void ejercicio5() {
+    public static void ejercicio7() {
         /*
-         * 5. Crea metodos para leer una edad, clasificarla en categorias
-         * (nino, adolescente, adulto, mayor) y mostrar el resultado.
+         * 7. Muestra todos los numeros pares entre dos numeros, ambos incluidos.
          */
-        int edad = leerEdad();
-        mostrarResultado(edad);
+        mostrarIntermedios(2, 10);
     }
 
-    public static int leerEdad() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Introduce una edad");
-        int edad = sc.nextInt();
-        return edad;
-    }
-
-    public static String categoria(int edad) {
-        if (edad < 12) {
-            return "nino";
-        } else if (edad < 18) {
-            return "adolescente";
-        } else if (edad < 60) {
-            return "adulto";
-        } else {
-            return "mayor";
+    public static void mostrarIntermedios(int a, int b) {
+        for (int i = a; i <= b; i++) {
+            if (i % 2 == 0) {
+                System.out.println(i);
+            }
         }
     }
 
-    public static void mostrarResultado(int edad) {
-        System.out.println(categoria(edad));
-    }
-
-    public static void ejercicio12() {
+    public static void ejercicio8() {
         /*
-         * 12. Implementa metodos para pedir tres notas, calcular la media,
-         * obtener la calificacion textual y mostrar los resultados.
+         * 8. Calcula y muestra el area de un circulo de radio r.
+         * Nota: En un circulo: area = pi * r * 2
+         * Nota: en Java podemos usar el numero pi con la constante de la
+         * clase Math.PI.
          */
-        mostrarResultados();
+        System.out.println(areaDeCirculo(5));
     }
 
-    public static double obtenerNota() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Introduce una primera nota");
-        double nota1 = sc.nextDouble();
-        System.out.println("Introduce una segunda nota");
-        double nota2 = sc.nextDouble();
-        System.out.println("Introduce una tercera nota");
-        double nota3 = sc.nextDouble();
-        double media = (nota1 + nota2 + nota3) / 3;
-        return media;
-    }
-
-    public static String obtenerCalificacionTextual(double media) {
-        String calificacion1 = "Suspenso";
-        String calificacion2 = "Aprobado";
-        String calificacion3 = "Sobresaliente";
-        if (media < 5) {
-            return calificacion1;
-        } else if (media >= 5 && media <= 8) {
-            return calificacion2;
-        } else {
-            return calificacion3;
-        }
-    }
-
-    public static void mostrarResultados() {
-        System.out.println(obtenerCalificacionTextual(obtenerNota()));
-    }
-
-    public static void ejercicio10() {
-        /*
-         * 10. Crea una clase CalculadoraModular con metodos para sumar,
-         * restar, multiplicar y dividir dos numeros. Cada operacion debe
-         * ser un metodo independiente. Desde el main, pide dos numeros
-         * y una operacion al usuario.
-         */
-    }
-
-    public static void ejercicio37() {
-        /*
-         * 37. Cifrado simple.
-         * Crea metodos para leer una palabra, cifrarla sustituyendo vocales por
-         * el siguiente caracter, y mostrar el resultado.
-         */
-    }
-
-    public static void ejercicio11() {
-        /*
-         * 11. Simula un inicio de sesion con tres metodos:
-         *
-         * validarUsuario, mostrarResultado y ejecutarPrograma.
-         * El metodo main solo debe llamar a ejecutarPrograma().
-         */
-        ejecutarPrograma();
-    }
-
-    public static boolean validarUsuario() {
-        Scanner sc = new Scanner(System.in);
-        boolean usuarioValido = true;
-        String usuario = "";
-        System.out.println("Introduce el usuario");
-        usuario = sc.nextLine();
-        if (usuario.length() == 0) {
-            usuarioValido = false;
-            return usuarioValido;
-        } else {
-            return usuarioValido;
-        }
-    }
-
-    public static void mostrarResultado(boolean validarUsuario) {
-        if (!validarUsuario) {
-            System.out.println("Error al introducir usuario");
-        } else {
-            System.out.println("Usuario validado con exito");
-        }
-    }
-
-    public static void ejecutarPrograma() {
-        mostrarResultado(validarUsuario());
+    public static double areaDeCirculo(int r) {
+        double area = Math.PI * Math.pow(r, 2);
+        return area;
     }
 
     public static void ejercicio9() {
@@ -283,11 +208,97 @@ class Funciones {
         }
     }
 
-    public static void ejercicio38() {
+    public static void ejercicio10() {
         /*
-         * 38. Sistema de menu modular.
-         * Desarrolla un programa con un menu principal que llame a metodos distintos
-         * segun la opcion elegida.
+         * 10. Crea una clase CalculadoraModular con metodos para sumar,
+         * restar, multiplicar y dividir dos numeros. Cada operacion debe
+         * ser un metodo independiente. Desde el main, pide dos numeros
+         * y una operacion al usuario.
+         */
+    }
+
+    public static void ejercicio11() {
+        /*
+         * 11. Simula un inicio de sesion con tres metodos:
+         *
+         * validarUsuario, mostrarResultado y ejecutarPrograma.
+         * El metodo main solo debe llamar a ejecutarPrograma().
+         */
+        ejecutarPrograma();
+    }
+
+    public static boolean validarUsuario() {
+        Scanner sc = new Scanner(System.in);
+        boolean usuarioValido = true;
+        String usuario = "";
+        System.out.println("Introduce el usuario");
+        usuario = sc.nextLine();
+        if (usuario.length() == 0) {
+            usuarioValido = false;
+            return usuarioValido;
+        } else {
+            return usuarioValido;
+        }
+    }
+
+    public static void mostrarResultadoUsuario(boolean usuarioValido) {
+        if (usuarioValido) {
+            System.out.println("Usuario validado con exito");
+        } else {
+            System.out.println("Error al introducir usuario");
+        }
+    }
+
+    public static void ejecutarPrograma() {
+        mostrarResultadoUsuario(validarUsuario());
+    }
+
+    public static void ejercicio12() {
+        /*
+         * 12. Implementa metodos para pedir tres notas, calcular la media,
+         * obtener la calificacion textual y mostrar los resultados.
+         */
+        mostrarResultados();
+    }
+
+    public static double obtenerNota() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce una primera nota");
+        double nota1 = sc.nextDouble();
+        System.out.println("Introduce una segunda nota");
+        double nota2 = sc.nextDouble();
+        System.out.println("Introduce una tercera nota");
+        double nota3 = sc.nextDouble();
+        double media = (nota1 + nota2 + nota3) / 3;
+        return media;
+    }
+
+    public static String obtenerCalificacionTextual(double media) {
+        String calificacion1 = "Suspenso";
+        String calificacion2 = "Aprobado";
+        String calificacion3 = "Sobresaliente";
+        if (media < 5) {
+            return calificacion1;
+        } else if (media >= 5 && media <= 8) {
+            return calificacion2;
+        } else {
+            return calificacion3;
+        }
+    }
+
+    public static void mostrarResultados() {
+        System.out.println(obtenerCalificacionTextual(obtenerNota()));
+    }
+
+    public static void ejercicio13() {
+        /*
+         * 13. Ejercicio reservado para ampliar la coleccion de funciones.
+         */
+    }
+
+    public static void ejercicio14() {
+        /*
+         * 14. Ejercicio reservado para ampliar la coleccion de funciones.
          */
     }
 
@@ -356,7 +367,7 @@ class Funciones {
 
     public static void ejercicio18() {
         /*
-         * 18. Realiza una funcion llamada sumaPorElementoF que reciba un
+         * 18. Realiza una funcion llamada ejercicio2PorElementoF que reciba un
          * array de enteros y un entero y devuelva un array con el tamano
          * del array recibido y que contiene en cada posicion la suma del
          * elemento del array recibido con el entero recibido
@@ -384,14 +395,14 @@ class Funciones {
          * se utilizan en el main.
          */
         /*
-         * En el ejercicio 18 se ha de crear un array nuevo,dándole las dimensiones del
+         * En el ejercicio 18 se ha de crear un array nuevo,dÃƒÂ¡ndole las dimensiones del
          * array
-         * que entra por parámetro,por último,retorna algo,es decir usa return.
+         * que entra por parÃƒÂ¡metro,por ÃƒÂºltimo,retorna algo,es decir usa return.
          * 
-         * En el 17 simplemente realiza la operación.
-         * Además en el 18 guardamos el resultado en un nuevo array llamado resultado,el
-         * cual será la
-         * llamada a la función.El 17 no necesita eso,solo la llamada
+         * En el 17 simplemente realiza la operaciÃƒÂ³n.
+         * AdemÃƒÂ¡s en el 18 guardamos el resultado en un nuevo array llamado resultado,el
+         * cual serÃƒÂ¡ la
+         * llamada a la funciÃƒÂ³n.El 17 no necesita eso,solo la llamada
          */
     }
 
@@ -418,6 +429,17 @@ class Funciones {
         }
         return nuevoArray;
 
+    }
+
+    public static void ejercicio21() {
+        /*
+         * 21. Haz una funcion llamada factorial que reciba un entero y te
+         * devuelva el resultado del factorial de ese numero. Usa esa funcion
+         * factorial para llamarla desde un metodo llamado factorialArray que
+         * reciba un array de enteros (se presupone que mayores de 0) y
+         * cambie el valor de cada posicion por la del factorial del numero
+         * que contiene. (Ojo, es un metodo).
+         */
     }
 
     public static void ejercicio22() {
@@ -455,28 +477,6 @@ class Funciones {
          */
     }
 
-    public static void ejercicio26() {
-        /*
-         * 26. Realiza una funcion llamada invertirArray que reciba un array
-         * de enteros y devuelva otro array con las posiciones invertidas.
-         * Ejemplo:
-         * entrada: [1, 3, 6, 2, 4, 1] -> salida: [1, 4, 2, 6, 3, 1]
-         */
-    }
-
-    public static void ejercicio29() {
-        /*
-         * 29. Haz una funcion llamada desplazamiento que reciba un array
-         * de char y un numero entero mayor o igual que cero, y devuelva un
-         * nuevo array que sea el resultado de desplazar los elementos el
-         * numero de posiciones introducido.
-         * Ejemplos:
-         * entrada: ['a', 'v', 't', 's', 'k'], 3 -> salida: ['t', 's', 'k', 'a', 'v']
-         * entrada: ['a', 'v', 't', 's', 'k'], 0 -> salida: ['a', 'v', 't', 's', 'k']
-         * entrada: ['a', 'v', 't', 's', 'k'], 1 -> salida: ['k', 'a', 'v', 't', 's']
-         */
-    }
-
     public static void ejercicio25() {
         /*
          * 25. Realiza una funcion llamada noRepetidos que reciba un array
@@ -488,14 +488,12 @@ class Funciones {
          */
     }
 
-    public static void ejercicio21() {
+    public static void ejercicio26() {
         /*
-         * 21. Haz una funcion llamada factorial que reciba un entero y te
-         * devuelva el resultado del factorial de ese numero. Usa esa funcion
-         * factorial para llamarla desde un metodo llamado factorialArray que
-         * reciba un array de enteros (se presupone que mayores de 0) y
-         * cambie el valor de cada posicion por la del factorial del numero
-         * que contiene. (Ojo, es un metodo).
+         * 26. Realiza una funcion llamada invertirArray que reciba un array
+         * de enteros y devuelva otro array con las posiciones invertidas.
+         * Ejemplo:
+         * entrada: [1, 3, 6, 2, 4, 1] -> salida: [1, 4, 2, 6, 3, 1]
          */
     }
 
@@ -524,9 +522,22 @@ class Funciones {
          */
     }
 
+    public static void ejercicio29() {
+        /*
+         * 29. Haz una funcion llamada desplazamiento que reciba un array
+         * de char y un numero entero mayor o igual que cero, y devuelva un
+         * nuevo array que sea el resultado de desplazar los elementos el
+         * numero de posiciones introducido.
+         * Ejemplos:
+         * entrada: ['a', 'v', 't', 's', 'k'], 3 -> salida: ['t', 's', 'k', 'a', 'v']
+         * entrada: ['a', 'v', 't', 's', 'k'], 0 -> salida: ['a', 'v', 't', 's', 'k']
+         * entrada: ['a', 'v', 't', 's', 'k'], 1 -> salida: ['k', 'a', 'v', 't', 's']
+         */
+    }
+
     public static void ejercicio30() {
         /*
-         * 30. Realiza una funcion llamada sumatorioDivisoresArray que
+         * 30. Realiza una funcion llamada ejercicio2torioDivisoresArray que
          * realice el sumatorio de los divisores de todos los numeros de un
          * array.
          * Ejemplo:
@@ -545,12 +556,11 @@ class Funciones {
          */
     }
 
-    public static void ejercicio39() {
+    public static void ejercicio32() {
         /*
-         * 39. Mini proyecto: Gestor de estudiantes modular.
-         * Crea una clase GestorEstudiantes con metodos para mostrar un menu,
-         * registrar estudiantes, mostrar la lista y calcular la media del grupo.
-         * El metodo main solo debe llamar a menu().
+         * 32. Crea una clase GestorEstudiantes con metodos para mostrar
+         * un menu, registrar estudiantes, mostrar la lista y calcular la
+         * media del grupo. El metodo main solo debe llamar a menu().
          */
     }
 
@@ -559,6 +569,13 @@ class Funciones {
          * 33. Realiza un juego llamado alfil vs caballo en un tablero 8x8,
          * colocando ambas piezas aleatoriamente y permitiendo moverlas por
          * turnos hasta que una capture a la otra.
+         */
+    }
+
+    public static void ejercicio34() {
+        /*
+         * 34. Realiza el juego anterior de nuevo, pero en esta ocasion,
+         * habra solo un usuario que se enfrentara contra la maquina.
          */
     }
 
@@ -571,21 +588,6 @@ class Funciones {
          */
     }
 
-    public static void ejercicio34() {
-        /*
-         * 34. Realiza el juego anterior de nuevo, pero en esta ocasion,
-         * habra solo un usuario que se enfrentara contra la maquina.
-         */
-    }
-
-    public static void ejercicio32() {
-        /*
-         * 32. Crea una clase GestorEstudiantes con metodos para mostrar
-         * un menu, registrar estudiantes, mostrar la lista y calcular la
-         * media del grupo. El metodo main solo debe llamar a menu().
-         */
-    }
-
     public static void ejercicio36() {
         /*
          * 36. Calculos basicos modulares.
@@ -595,43 +597,69 @@ class Funciones {
          */
     }
 
+    public static void ejercicio37() {
+        /*
+         * 37. Cifrado simple.
+         * Crea metodos para leer una palabra, cifrarla sustituyendo vocales por
+         * el siguiente caracter, y mostrar el resultado.
+         */
+    }
+
+    public static void ejercicio38() {
+        /*
+         * 38. Sistema de menu modular.
+         * Desarrolla un programa con un menu principal que llame a metodos distintos
+         * segun la opcion elegida.
+         */
+    }
+
+    public static void ejercicio39() {
+        /*
+         * 39. Mini proyecto: Gestor de estudiantes modular.
+         * Crea una clase GestorEstudiantes con metodos para mostrar un menu,
+         * registrar estudiantes, mostrar la lista y calcular la media del grupo.
+         * El metodo main solo debe llamar a menu().
+         */
+    }
     public static void main(String[] args) throws Exception {
-        // holaMundo();
-        // System.out.println(suma(3, 5));
-        // eco(3);
-        // mayorOMenor(4, 8);
-        // mostrarIntermedios(2, 10);
-        // System.out.println(areaDeCirculo(5));
-        // ejercicio6();
+        // ejercicio1();
+        // ejercicio2();
+        // ejercicio3();
+        // ejercicio4();
         // ejercicio5();
-        // ejercicio12();
+        // ejercicio6();
+        // ejercicio7();
+        // ejercicio8();
+        // ejercicio9();
         // ejercicio10();
-        // ejercicio37();
         // ejercicio11();
-        // menu();
-        // ejercicio38();
+        // ejercicio12();
+        // ejercicio13();
+        // ejercicio14();
         // ejercicio15();
         // ejercicio16();
         // ejercicio17();
         // ejercicio18();
         // ejercicio19();
         // ejercicio20();
+        // ejercicio21();
         // ejercicio22();
         // ejercicio23();
         // ejercicio24();
-        // ejercicio26();
-        // ejercicio29();
         // ejercicio25();
-        // ejercicio21();
+        // ejercicio26();
         // ejercicio27();
         // ejercicio28();
+        // ejercicio29();
         // ejercicio30();
         // ejercicio31();
-        // ejercicio39();
-        // ejercicio33();
-        // ejercicio35();
-        // ejercicio34();
         // ejercicio32();
+        // ejercicio33();
+        // ejercicio34();
+        // ejercicio35();
         // ejercicio36();
+        // ejercicio37();
+        // ejercicio38();
+        // ejercicio39();
     }
 }

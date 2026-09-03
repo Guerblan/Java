@@ -388,7 +388,74 @@ class Condicionales {
     }
 
     public static void ejercicio18() {
+        /*
+         * Ejercicio 18:
+         * Crea un cajero automatico con un menu que permita consultar el saldo,
+         * ingresar dinero, retirar dinero y salir. Solo se aceptan ingresos y
+         * retiradas positivos, y no se puede retirar mas dinero del disponible.
+         * Al salir, muestra las estadisticas de ingresos, retiradas y saldo final.
+         */
+        Scanner sc = new Scanner(System.in);
+        int saldo = 0;
+        int numeroIngresos = 0;
+        int totalIngresado = 0;
+        int numeroRetiradas = 0;
+        int totalRetirado = 0;
+        int opcion = 0;
 
+        while (opcion != 4) {
+            System.out.println("1. Consultar saldo");
+            System.out.println("2. Ingresar dinero");
+            System.out.println("3. Retirar dinero");
+            System.out.println("4. Salir");
+            System.out.println("Elige una opcion:");
+            opcion = sc.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    System.out.println("Su saldo es " + saldo + " euros");
+                    break;
+                case 2:
+                    System.out.println("Cuanto quiere ingresar?");
+                    int ingreso = sc.nextInt();
+                    if (ingreso > 0) {
+                        saldo += ingreso;
+                        totalIngresado += ingreso;
+                        numeroIngresos++;
+                        System.out.println("Ha ingresado " + ingreso + " euros");
+                    } else {
+                        System.out.println("Cantidad a ingresar invalida");
+                    }
+                    break;
+                case 3:
+                    System.out.println("Cuanto desea retirar?");
+                    int retirada = sc.nextInt();
+                    if (retirada <= 0) {
+                        System.out.println("Cantidad a retirar invalida");
+                    } else if (retirada > saldo) {
+                        System.out.println("No dispone de saldo suficiente");
+                    } else {
+                        saldo -= retirada;
+                        totalRetirado += retirada;
+                        numeroRetiradas++;
+                        System.out.println("Ha retirado " + retirada + " euros");
+                    }
+                    break;
+                case 4:
+                    System.out.println("Gracias por usar el cajero automatico. Hasta luego!");
+                    break;
+                default:
+                    System.out.println("Opcion no valida");
+                    break;
+            }
+        }
+
+        System.out.println("--- ESTADISTICAS DE USO ---");
+        System.out.println("Numero total de ingresos: " + numeroIngresos);
+        System.out.println("Importe total ingresado: " + totalIngresado);
+        System.out.println("Numero total de retiradas: " + numeroRetiradas);
+        System.out.println("Importe total retirado: " + totalRetirado);
+        System.out.println("Saldo final: " + saldo);
     }
 
     public static void ejercicio19() {
