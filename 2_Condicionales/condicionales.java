@@ -2,6 +2,66 @@ import java.util.Scanner;
 
 class Condicionales {
     public static void ejercicio1() {
+        /* Pide la edad de una persona e indica si es mayor o menor de edad. */
+        Scanner sc = new Scanner(System.in);
+        int edad;
+        System.out.println("Dame tu edad");
+        edad = sc.nextInt();
+        if (edad >= 18) {
+            System.out.println("Eres mayor de edad");
+        } else {
+            System.out.println("Eres menor de edad");
+        }
+    }
+
+    public static void ejercicio2() {
+        /* Pide un número entero e indica si es positivo, negativo o igual a cero. */
+        Scanner sc = new Scanner(System.in);
+        int num;
+        System.out.println("Dame un número entero");
+        num = sc.nextInt();
+        if (num > 0) {
+            System.out.println("El número es positivo");
+        } else if (num == 0) {
+            System.out.println("El número es 0");
+        } else {
+            System.out.println("El número es negativo");
+        }
+    }
+
+    public static void ejercicio3() {
+        /* Pide un número entero e indica si es par o impar. */
+        Scanner sc = new Scanner(System.in);
+        int num;
+        System.out.println("Dime un número y te diré si es par o impar");
+        num = sc.nextInt();
+        if (num % 2 == 0) {
+            System.out.println(num + " es par");
+        } else {
+            System.out.println(num + " es impar");
+        }
+    }
+
+    public static void ejercicio4() {
+        /* Pide dos números e indica cuál es mayor o si ambos son iguales. */
+        Scanner sc = new Scanner(System.in);
+        int num1;
+        int num2;
+        System.out.println("Dame un número");
+        num1 = sc.nextInt();
+        System.out.println("Dame otro número");
+        num2 = sc.nextInt();
+        if (num1 > num2) {
+            System.out.println(num1 + " es mayor que " + num2);
+        } else if (num1 < num2) {
+            System.out.println(num1 + " es menor que " + num2);
+        } else {
+            System.out.println("Son iguales");
+        }
+    }
+
+    public static void ejercicio5() {
+        /* Pide un número entero e indica si es múltiplo de 3. */
         Scanner sc = new Scanner(System.in);
         int num;
         System.out.println("Introduce un número entero");
@@ -13,7 +73,38 @@ class Condicionales {
         }
     }
 
-    public static void ejercicio2() {
+    public static void ejercicio6() {
+        /*
+         * Pide dos números y muestra el resultado de dividir el primero entre el
+         * segundo. Controla que el divisor no sea cero.
+         */
+        Scanner sc = new Scanner(System.in);
+        int num1;
+        int num2;
+        System.out.println("Dame un primer número");
+        num1 = sc.nextInt();
+        System.out.println("Dame un segundo número");
+        num2 = sc.nextInt();
+        if (num2 != 0) {
+            int resultado = num1 / num2;
+            System.out.println("El resultado de la división entre " + num1 + " y " + num2 + " es " + resultado);
+        } else {
+            System.out.println("Error: no se puede dividir entre 0");
+        }
+    }
+
+    public static void ejercicio7() {
+        /*
+         * Simula el acceso a una cuenta mediante un nombre de usuario y una contraseña.
+         * Informa si el acceso es correcto o cuál de los dos datos es incorrecto.
+         */
+    }
+
+    public static void ejercicio8() {
+        /*
+         * Pide tres números enteros y muestra cuál es el mayor. Si no existe un único
+         * número mayor, muestra un mensaje indicándolo.
+         */
         Scanner sc = new Scanner(System.in);
         int num1;
         int num2;
@@ -35,25 +126,32 @@ class Condicionales {
         }
     }
 
-    public static void ejercicio3() {
-        Scanner sc = new Scanner(System.in);
-        int hora;
-        int min;
-        int seg;
-        System.out.println("Introduce la hora");
-        hora = sc.nextInt();
-        System.out.println("Introduce los minutos");
-        min = sc.nextInt();
-        System.out.println("Introduce los segundos");
-        seg = sc.nextInt();
-        if (hora >= 0 && hora <= 23 && min >= 0 && min <= 59 && seg >= 0 && seg <= 59) {
-            System.out.println("La hora " + hora + ":" + min + ":" + seg + " es válida");
-        } else {
-            System.out.println("Hora introducida inválida");
-        }
+    public static void ejercicio9() {
+        /*
+         * Pide la edad de una persona y clasifícala como niño, adolescente, adulto o
+         * mayor de 65 años.
+         */
     }
 
-    public static void ejercicio4() {
+    public static void ejercicio10() {
+        /*
+         * Pide una nota entre 0 y 10 y muestra su calificación: insuficiente,
+         * suficiente, bien, notable o sobresaliente. Valida que la nota sea correcta.
+         */
+    }
+
+    public static void ejercicio11() {
+        /*
+         * Pide un carácter e indica si es una vocal, una consonante, un número u otro
+         * tipo de símbolo.
+         */
+    }
+
+    public static void ejercicio12() {
+        /*
+         * Pide un número entero del 0 al 10 y muestra su nombre escrito con palabras.
+         * Si está fuera de ese intervalo, muestra un mensaje de error.
+         */
         Scanner sc = new Scanner(System.in);
         int num;
         System.out.println("Introduce un número del 0 al 10");
@@ -98,7 +196,11 @@ class Condicionales {
         }
     }
 
-    public static void ejercicio5() {
+    public static void ejercicio13() {
+        /*
+         * Pide el nombre de un número comprendido entre cero y diez y muestra su valor
+         * numérico. Si el texto no es válido, muestra un mensaje de error.
+         */
         Scanner sc = new Scanner(System.in);
         String num;
         System.out.println("Introduce un número con palabras");
@@ -143,7 +245,11 @@ class Condicionales {
         }
     }
 
-    public static void ejercicio6() {
+    public static void ejercicio14() {
+        /*
+         * Pide el número de un mes y muestra su nombre y la cantidad de días que tiene.
+         * Considera febrero con 28 días.
+         */
         Scanner sc = new Scanner(System.in);
         int mes;
         System.out.println("Introduce un número correspondiente a un mes");
@@ -191,7 +297,72 @@ class Condicionales {
         }
     }
 
-    public static void ejercicio7() {
+    public static void ejercicio15() {
+        /*
+         * Pide un año e indica si es bisiesto. Un año es bisiesto si es divisible entre
+         * 4 y no entre 100, salvo que también sea divisible entre 400.
+         */
+        Scanner sc = new Scanner(System.in);
+        int anio;
+        System.out.println("Dime un año y te diré si es o no bisiesto");
+        anio = sc.nextInt();
+        if (anio < 0) {
+            System.out.println("El año introducido no es válido");
+        } else if ((anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0)) {
+            System.out.println(anio + " es un año bisiesto");
+        } else {
+            System.out.println(anio + " no es un año bisiesto");
+        }
+    }
+
+    public static void ejercicio16() {
+        /*
+         * Pide una hora, unos minutos y unos segundos e indica si forman una hora
+         * válida en formato de 24 horas.
+         */
+        Scanner sc = new Scanner(System.in);
+        int hora;
+        int min;
+        int seg;
+        System.out.println("Introduce la hora");
+        hora = sc.nextInt();
+        System.out.println("Introduce los minutos");
+        min = sc.nextInt();
+        System.out.println("Introduce los segundos");
+        seg = sc.nextInt();
+        if (hora >= 0 && hora <= 23 && min >= 0 && min <= 59 && seg >= 0 && seg <= 59) {
+            System.out.println("La hora " + hora + ":" + min + ":" + seg + " es válida");
+        } else {
+            System.out.println("Hora introducida inválida");
+        }
+    }
+
+    public static void ejercicio17() {
+        /*
+         * Pide una base y un exponente y calcula la potencia. Si el exponente es cero,
+         * el resultado debe ser 1.
+         */
+        Scanner sc = new Scanner(System.in);
+        int base;
+        int exponente;
+        System.out.println("Introduce la base");
+        base = sc.nextInt();
+        System.out.println("Introduce el exponente");
+        exponente = sc.nextInt();
+        double resultado;
+        if (exponente == 0) {
+            resultado = 1;
+        } else {
+            resultado = Math.pow(base, exponente);
+        }
+        System.out.println("El resultado de elevar " + base + " a " + exponente + " es " + resultado);
+    }
+
+    public static void ejercicio18() {
+        /*
+         * Pide las notas de las tres evaluaciones. Si todas están aprobadas, calcula y
+         * muestra la media; si alguna está suspensa, indica cuál debe recuperarse.
+         */
         Scanner sc = new Scanner(System.in);
         int nota1;
         int nota2;
@@ -218,7 +389,11 @@ class Condicionales {
         }
     }
 
-    public static void ejercicio8() {
+    public static void ejercicio19() {
+        /*
+         * Calcula el sueldo semanal según las horas trabajadas. Las primeras 150 horas
+         * se pagan a 10 euros y las restantes a 20 euros.
+         */
         Scanner sc = new Scanner(System.in);
         int horas;
         System.out.println("¿Cuántas horas has trabajado?");
@@ -232,83 +407,63 @@ class Condicionales {
         }
     }
 
-    public static void ejercicio9() {
+    public static void ejercicio20() {
+        /*
+         * Pide el peso y la altura de una persona, calcula su índice de masa corporal
+         * e indica si tiene bajo peso, peso normal, sobrepeso u obesidad.
+         */
+    }
+
+    public static void ejercicio21() {
+        /*
+         * Calcula el coste de una excursión según el número de alumnos: 40 euros por
+         * alumno si son 50 o más, 48 si son entre 30 y 49, 56 si son entre 20 y 29 y
+         * un total fijo de 2000 euros si son menos de 20.
+         */
         Scanner sc = new Scanner(System.in);
-        int anio;
-        System.out.println("Dime un año y te diré si es o no bisiesto");
-        anio = sc.nextInt();
-        if (anio < 0) {
-            System.out.println("El año introducido no es válido");
-        } else if ((anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0)) {
-            System.out.println(anio + " es un año bisiesto");
+        int costeTotal;
+        int numAlumnos;
+        System.out.println("¿Qué número de alumnos asistirán a la excursión?");
+        numAlumnos = sc.nextInt();
+        if (numAlumnos >= 50) {
+            costeTotal = numAlumnos * 40;
+            System.out.println("El coste total del viaje es: " + costeTotal);
+            System.out.println("Cada alumno paga 40 euros");
+        } else if (numAlumnos >= 30) {
+            costeTotal = numAlumnos * 48;
+            System.out.println("El coste total del viaje es: " + costeTotal);
+            System.out.println("Cada alumno paga 48 euros");
+        } else if (numAlumnos >= 20) {
+            costeTotal = numAlumnos * 56;
+            System.out.println("El coste total del viaje es: " + costeTotal);
+            System.out.println("Cada alumno paga 56 euros");
+        } else if (numAlumnos > 0) {
+            System.out.println("El coste total del viaje es: 2000 euros");
+            System.out.println("Cada alumno paga " + (2000 / numAlumnos) + " euros");
         } else {
-            System.out.println(anio + " no es un año bisiesto");
+            System.out.println("Número de alumnos inválido");
         }
     }
 
-    public static void ejercicio10() {
-        Scanner sc = new Scanner(System.in);
-        int num1;
-        int num2;
-        System.out.println("Dame un número");
-        num1 = sc.nextInt();
-        System.out.println("Dame otro número");
-        num2 = sc.nextInt();
-        if (num1 > num2) {
-            System.out.println(num1 + " es mayor que " + num2);
-        } else if (num1 < num2) {
-            System.out.println(num1 + " es menor que " + num2);
-        } else {
-            System.out.println("Son iguales");
-        }
+    public static void ejercicio22() {
+        /*
+         * Pide tres números y muéstralos ordenados de menor a mayor utilizando
+         * estructuras condicionales.
+         */
     }
 
-    public static void ejercicio11() {
-        Scanner sc = new Scanner(System.in);
-        int num;
-        System.out.println("Dime un número y te diré si es par o impar");
-        num = sc.nextInt();
-        if (num % 2 == 0) {
-            System.out.println(num + " es par");
-        } else {
-            System.out.println(num + " es impar");
-        }
+    public static void ejercicio23() {
+        /*
+         * Crea una calculadora que pida dos números y una operación (+, -, * o /).
+         * Muestra el resultado y controla la división entre cero.
+         */
     }
 
-    public static void ejercicio12() {
-        Scanner sc = new Scanner(System.in);
-        int num1;
-        int num2;
-        System.out.println("Dame un primer número");
-        num1 = sc.nextInt();
-        System.out.println("Dame un segundo número");
-        num2 = sc.nextInt();
-        if (num2 != 0) {
-            int resultado = num1 / num2;
-            System.out.println("El resultado de la división entre " + num1 + " y " + num2 + " es " + resultado);
-        } else {
-            System.out.println("Error: no se puede dividir entre 0");
-        }
-    }
-
-    public static void ejercicio13() {
-        Scanner sc = new Scanner(System.in);
-        int base;
-        int exponente;
-        System.out.println("Introduce la base");
-        base = sc.nextInt();
-        System.out.println("Introduce el exponente");
-        exponente = sc.nextInt();
-        double resultado;
-        if (exponente == 0) {
-            resultado = 1;
-        } else {
-            resultado = Math.pow(base, exponente);
-        }
-        System.out.println("El resultado de elevar " + base + " a " + exponente + " es " + resultado);
-    }
-
-    public static void ejercicio14() {
+    public static void ejercicio24() {
+        /*
+         * Pide los tres lados de un triángulo e indica si es equilátero, isósceles o
+         * escaleno. Indica también si es un triángulo rectángulo.
+         */
         Scanner sc = new Scanner(System.in);
         int lado1;
         int lado2;
@@ -335,61 +490,23 @@ class Condicionales {
         }
     }
 
-    public static void ejercicio15() {
-        Scanner sc = new Scanner(System.in);
-        int costeTotal;
-        int numAlumnos;
-        System.out.println("¿Qué número de alumnos asistirán a la excursión?");
-        numAlumnos = sc.nextInt();
-        if (numAlumnos >= 50) {
-            costeTotal = numAlumnos * 40;
-            System.out.println("El coste total del viaje es: " + costeTotal);
-            System.out.println("Cada alumno paga 40 euros");
-        } else if (numAlumnos >= 30) {
-            costeTotal = numAlumnos * 48;
-            System.out.println("El coste total del viaje es: " + costeTotal);
-            System.out.println("Cada alumno paga 48 euros");
-        } else if (numAlumnos >= 20) {
-            costeTotal = numAlumnos * 56;
-            System.out.println("El coste total del viaje es: " + costeTotal);
-            System.out.println("Cada alumno paga 56 euros");
-        } else if (numAlumnos > 0) {
-            System.out.println("El coste total del viaje es: 2000 euros");
-            System.out.println("Cada alumno paga " + (2000 / numAlumnos) + " euros");
-        } else {
-            System.out.println("Número de alumnos inválido");
-        }
-    }
-
-    public static void ejercicio16() {
-        Scanner sc = new Scanner(System.in);
-        int num;
-        System.out.println("Dame un número entero");
-        num = sc.nextInt();
-        if (num > 0) {
-            System.out.println("El número es positivo");
-        } else if (num == 0) {
-            System.out.println("El número es 0");
-        } else {
-            System.out.println("El número es negativo");
-        }
-    }
-
-    public static void ejercicio17() {
-        Scanner sc = new Scanner(System.in);
-        int edad;
-        System.out.println("Dame tu edad");
-        edad = sc.nextInt();
-        if (edad >= 18) {
-            System.out.println("Eres mayor de edad");
-        } else {
-            System.out.println("Eres menor de edad");
-        }
-    }
-
-    public static void ejercicio18() {
+    public static void ejercicio25() {
         /*
-         * Ejercicio 18:
+         * Pide un mes y un año y muestra cuántos días tiene ese mes, teniendo en cuenta
+         * si el año es bisiesto.
+         */
+    }
+
+    public static void ejercicio26() {
+        /*
+         * Pide una fecha formada por día, mes y año e indica si es válida, considerando
+         * la cantidad de días de cada mes y los años bisiestos.
+         */
+    }
+
+    public static void ejercicio27() {
+        /*
+         * Ejercicio 27:
          * Crea un cajero automatico con un menu que permita consultar el saldo,
          * ingresar dinero, retirar dinero y salir. Solo se aceptan ingresos y
          * retiradas positivos, y no se puede retirar mas dinero del disponible.
@@ -456,42 +573,6 @@ class Condicionales {
         System.out.println("Numero total de retiradas: " + numeroRetiradas);
         System.out.println("Importe total retirado: " + totalRetirado);
         System.out.println("Saldo final: " + saldo);
-    }
-
-    public static void ejercicio19() {
-
-    }
-
-    public static void ejercicio20() {
-
-    }
-
-    public static void ejercicio21() {
-
-    }
-
-    public static void ejercicio22() {
-
-    }
-
-    public static void ejercicio23() {
-
-    }
-
-    public static void ejercicio24() {
-
-    }
-
-    public static void ejercicio25() {
-
-    }
-
-    public static void ejercicio26() {
-
-    }
-
-    public static void ejercicio27() {
-
     }
 
     public static void main(String[] args) {
