@@ -20,6 +20,9 @@ class Vectores {
          * 
          * Imprime el valor del tercer elemento del array.
          */
+
+        int[] enteros = { 10, 20, 30, 40, 50 };
+        System.out.println(enteros[2]);
     }
 
     public static void ejercicio2() {
@@ -32,6 +35,8 @@ class Vectores {
          * 
          * Imprime el valor del cuarto elemento del array.
          */
+        int[] notas = { 8, 6, 9, 7 };
+        System.out.println(notas[3]);
     }
 
     public static void ejercicio3() {
@@ -51,6 +56,8 @@ class Vectores {
         /*
          * int[] numeros = {10, 20, 30, 40, 50};
          * System.out.println(numeros[5]);
+         * 
+         * No se puede ya que no existe la posición 5
          */
     }
 
@@ -66,6 +73,16 @@ class Vectores {
          * 
          * Imprime el array completo después de la modificación.
          */
+        int[] temperaturas = new int[3];
+        temperaturas[0] = 15;
+        temperaturas[1] = 20;
+        temperaturas[2] = 25;
+
+        temperaturas[1] = 30;
+        for (int i = 0; i < temperaturas.length; i++) {
+            System.out.println(temperaturas[i]);
+        }
+
     }
 
     public static void ejercicio5() {
@@ -81,6 +98,11 @@ class Vectores {
          * 
          * 
          */
+        int[] precios = { 100, 200, 300, 400 };
+        precios[2] = 350;
+        for (int i = 0; i < precios.length; i++) {
+            System.out.println(precios[i]);
+        }
     }
 
     public static void ejercicio6() {
@@ -89,16 +111,21 @@ class Vectores {
          * de 5 elementos con valores del 1 al 5. Luego, muestra todos los elementos del
          * array.
          */
+        int[] enteros = { 1, 2, 3, 4, 5 };
+        for (int i = 0; i < enteros.length; i++) {
+            System.out.println(enteros[i]);
+        }
     }
 
     public static void ejercicio7() {
         /*
-         * RELLENAR UN ARRAY CON RAMDOMS
+         * REPETIDO
          * 
          * Crea un programa que declare e inicialice un array unidimensional de 5
          * elementos con valores del 1 al 5. Luego, muestra todos los elementos del
          * array.
          */
+
     }
 
     public static void ejercicio8() {
@@ -108,6 +135,10 @@ class Vectores {
          * por
          * pantalla.
          */
+        int[] enteros = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        for (int i = 0; i < enteros.length; i++) {
+            System.out.println(enteros[i]);
+        }
     }
 
     public static void ejercicio9() {
@@ -122,16 +153,46 @@ class Vectores {
          * 
          * Se muestren los números del array en pantalla.
          */
+        Random rd = new Random();
+        int[] aleatorios = new int[5];
+        for (int i = 0; i < aleatorios.length; i++) {
+            /*
+             * Aquí sé que dentro de (1,51) el primer dígito es el origen
+             * y el segundo el final,que nunca llega,por lo tanto
+             * si me piden por ej entre 34 y 58 mi rango será (34,59)
+             * porque al final nunca llega.Así me olvido de 51
+             */
+            aleatorios[i] = rd.nextInt(1, 51);
+            System.out.println(aleatorios[i]);
+        }
     }
 
     public static void ejercicio10() {
         /* Genera veinte enteros aleatorios entre 0 y 99 y guardalos en un array. */
+        Random rd = new Random();
+        int[] aleatorios = new int[20];
+        for (int i = 0; i < aleatorios.length; i++) {
+            aleatorios[i] = rd.nextInt(0, 100);
+        }
+
     }
 
     public static void ejercicio11() {
         /* Pide n numeros, guardalos en un array y muestralos por pantalla. */
-    }
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Dame un número que represente el tamaño de un array");
+        int n = sc.nextInt();
+        int[] array = new int[n];
+        for (int i = 0; i < array.length; i++) {
+            System.out.println("Dame un número");
+            int x = sc.nextInt();
+            array[i] = x;
+        }
 
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
 
     // Nivel 2: cálculos, búsquedas y análisis de vectores
 
@@ -147,6 +208,18 @@ class Vectores {
          * 
          * Imprime el resultado de la suma.
          */
+        int[] enteros = new int[5];
+        enteros[0] = 5;
+        enteros[1] = 10;
+        enteros[2] = 15;
+        enteros[3] = 20;
+        enteros[4] = 25;
+        int sum = 0;
+        for (int i = 0; i < enteros.length; i++) {
+            sum += enteros[i];
+        }
+
+        System.out.println(sum);
     }
 
     public static void ejercicio13() {
@@ -161,12 +234,30 @@ class Vectores {
          * 
          * Imprime el resultado de la suma.
          */
+        int[] enteros = { 2, 4, 6, 8, 10, 12 };
+        int sum = 0;
+        for (int i = 0; i < enteros.length; i++) {
+            sum += enteros[i];
+        }
+
+        System.out.println(sum);
     }
 
     public static void ejercicio14() {
         /*
          * Pide ocho numeros, guardalos en un vector y muestra la suma y la media.
          */
+        Scanner sc = new Scanner(System.in);
+        int[] enteros = new int[8];
+        double sum = 0;
+        for (int i = 0; i < enteros.length; i++) {
+            System.out.println("Dame un número");
+            enteros[i] = sc.nextInt();
+            sum += enteros[i];
+        }
+        System.out.println(sum);
+        double media = sum / 8;
+        System.out.println(media);
     }
 
     public static void ejercicio15() {
@@ -176,6 +267,15 @@ class Vectores {
          * posteriormente muestre en pantalla cada elemento del vector junto con su
          * cuadrado y su cubo.
          */
+        Random rd = new Random();
+        int[] vectorEnteros = new int[10];
+        for (int i = 0; i < vectorEnteros.length; i++) {
+            vectorEnteros[i] = rd.nextInt(1, 11);
+            System.out.println(vectorEnteros[i]);
+            System.out.println("Cuadrado: " + Math.pow(vectorEnteros[i], 2));
+            System.out.println("Cubo: " + Math.pow(vectorEnteros[i], 3));
+        }
+
     }
 
     public static void ejercicio16() {
@@ -184,6 +284,25 @@ class Vectores {
          * valores. Después, cuenta cuántos números son positivos, cuántos son negativos
          * y cuántos son iguales a cero. Muestra los resultados por pantalla.
          */
+        Scanner sc = new Scanner(System.in);
+        int[] enteros = new int[10];
+        int positivos = 0;
+        int negativos = 0;
+        int ceros = 0;
+        for (int i = 0; i < enteros.length; i++) {
+            System.out.println("Introduce un valor");
+            enteros[i] = sc.nextInt();
+            if (enteros[i] > 0) {
+                positivos++;
+            } else if (enteros[i] < 0) {
+                negativos++;
+            } else {
+                ceros++;
+            }
+        }
+        System.out.println("EL número de positivos es : " + positivos);
+        System.out.println("EL número de negativos es : " + negativos);
+        System.out.println("EL número de ceros es : " + ceros);
     }
 
     public static void ejercicio17() {
@@ -192,6 +311,8 @@ class Vectores {
          * un alumno (comprendidas entre 0 y 10). A continuación debe mostrar todas las
          * notas, la nota media, la nota más alta que ha sacado y la menor.
          */
+
+        //SIMILAR A OTROS
     }
 
     public static void ejercicio18() {
@@ -221,6 +342,24 @@ class Vectores {
          * Si el usuario ingresa 35, el programa debería imprimir:
          * El número 35 no está en el array.
          */
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce un número");
+        int n = sc.nextInt();
+        int [] enteros = {10,20,30,40,50,60,};
+        boolean encontrado = false;
+        for (int i = 0; i < enteros.length; i++) {
+            if (enteros[i] == n) {
+                encontrado = true;
+            }
+        }
+
+        if (encontrado) {
+            System.out.println("El número " + n + " está en el array");
+        }else{
+             System.out.println("El número " + n + " no está en el array");
+        }
+
     }
 
     public static void ejercicio19() {
@@ -245,6 +384,7 @@ class Vectores {
          * 
          * 
          */
+        //IGUAL QUE EL ANTERIOR
     }
 
     public static void ejercicio20() {
@@ -269,6 +409,7 @@ class Vectores {
          * precio X
          * no está en el array".
          */
+        //IGUAL QUE EL ANTERIOR
     }
 
     public static void ejercicio21() {
@@ -293,6 +434,8 @@ class Vectores {
          * "La
          * temperatura X no está en el array".
          */
+
+        //IGUAL QUE EL ANTERIOR
     }
 
     public static void ejercicio22() {
@@ -318,6 +461,7 @@ class Vectores {
          * X no
          * está en el array".
          */
+        //IGUAL QUE EL ANTERIOR
     }
 
     public static void ejercicio23() {
@@ -343,6 +487,7 @@ class Vectores {
          * X no
          * está en el array".
          */
+        //IGUAL QUE EL ANTERIOR
     }
 
     public static void ejercicio24() {
@@ -368,6 +513,25 @@ class Vectores {
          * Si el nombre no está en el array, imprime un mensaje diciendo:
          * "El nombre X no está en el array".
          */
+        Scanner sc = new Scanner(System.in);
+        String [] nombres = {"Ana", "Carlos", "Lucía", "Pedro", "Sofía"};
+        System.out.println("introduce un nombre");
+        String nombre = sc.nextLine();
+        boolean encontrado = false;
+        //Siempre es mejor,al trabajar co arrays el inicializar la posición en -1
+        // porque no existe y si no la encuentra no el 0,que SÍ existe
+        int posicion = -1;
+        for (int i = 0; i < nombres.length; i++) {
+            if (nombres[i].equals(nombre)) {
+                encontrado = true;
+                posicion = i;
+            }
+        }
+        if (encontrado) {
+            System.out.println("El nombre " + nombre + " está en el array en la posición " + posicion );
+        }else{
+            System.out.println("El nombre " + nombre + " no está en el array");
+        }
     }
 
     public static void ejercicio25() {
@@ -392,6 +556,7 @@ class Vectores {
          * Si el nombre no está en el array, imprime un mensaje diciendo:
          * "El nombre X no está en la lista".
          */
+        //IGUAL QUE EL ANTERIOR
     }
 
     public static void ejercicio26() {
@@ -401,6 +566,32 @@ class Vectores {
          * vector y las posiciones en las que se encuentra. Si no aparece, muestra un
          * mensaje indicándolo.
          */
+        Scanner sc = new Scanner(System.in);
+        int [] vector = new int[10];
+        for (int i = 0; i < vector.length; i++) {
+            System.out.println("Introduce un número");
+            vector[i] = sc.nextInt();
+        }
+        System.out.println("Dime un número a buscar en el vector");
+        int n = sc.nextInt();
+        int veces = 0;
+        int [] posiciones = new int[10];
+        boolean encontrado = false;
+        for (int i = 0; i < vector.length; i++) {
+            if (vector[i]== n) {
+                encontrado = true;
+                posiciones[veces] = i;
+                veces ++;
+            }
+        }
+        if (encontrado) {
+            System.out.println("El número " + n + " ha sido encotrado " + veces);
+            for (int i = 0; i < posiciones[veces].length; i++) {
+                System.out.println(i);
+            }
+        }else{
+            System.out.println("número no encontrado");
+        }
     }
 
     public static void ejercicio27() {
@@ -435,7 +626,6 @@ class Vectores {
          * Imprime el resultado.
          */
     }
-
 
     // Nivel 3: entrada, transformación y combinación de vectores
 
@@ -561,7 +751,6 @@ class Vectores {
          */
     }
 
-
     // Nivel 4: ordenación de vectores
 
     public static void ejercicio44() {
@@ -676,7 +865,6 @@ class Vectores {
          */
     }
 
-
     // Nivel 5: eliminación y desplazamiento de elementos
 
     public static void ejercicio53() {
@@ -777,7 +965,6 @@ class Vectores {
          * imprime un mensaje indicando que el estudiante no fue encontrado.
          */
     }
-
 
     // Nivel 6: matrices y ejercicios avanzados
 
