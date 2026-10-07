@@ -312,7 +312,7 @@ class Vectores {
          * notas, la nota media, la nota más alta que ha sacado y la menor.
          */
 
-        //SIMILAR A OTROS
+        // SIMILAR A OTROS
     }
 
     public static void ejercicio18() {
@@ -346,7 +346,7 @@ class Vectores {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce un número");
         int n = sc.nextInt();
-        int [] enteros = {10,20,30,40,50,60,};
+        int[] enteros = { 10, 20, 30, 40, 50, 60, };
         boolean encontrado = false;
         for (int i = 0; i < enteros.length; i++) {
             if (enteros[i] == n) {
@@ -356,8 +356,8 @@ class Vectores {
 
         if (encontrado) {
             System.out.println("El número " + n + " está en el array");
-        }else{
-             System.out.println("El número " + n + " no está en el array");
+        } else {
+            System.out.println("El número " + n + " no está en el array");
         }
 
     }
@@ -384,7 +384,7 @@ class Vectores {
          * 
          * 
          */
-        //IGUAL QUE EL ANTERIOR
+        // IGUAL QUE EL ANTERIOR
     }
 
     public static void ejercicio20() {
@@ -409,7 +409,7 @@ class Vectores {
          * precio X
          * no está en el array".
          */
-        //IGUAL QUE EL ANTERIOR
+        // IGUAL QUE EL ANTERIOR
     }
 
     public static void ejercicio21() {
@@ -435,7 +435,7 @@ class Vectores {
          * temperatura X no está en el array".
          */
 
-        //IGUAL QUE EL ANTERIOR
+        // IGUAL QUE EL ANTERIOR
     }
 
     public static void ejercicio22() {
@@ -461,7 +461,7 @@ class Vectores {
          * X no
          * está en el array".
          */
-        //IGUAL QUE EL ANTERIOR
+        // IGUAL QUE EL ANTERIOR
     }
 
     public static void ejercicio23() {
@@ -487,7 +487,7 @@ class Vectores {
          * X no
          * está en el array".
          */
-        //IGUAL QUE EL ANTERIOR
+        // IGUAL QUE EL ANTERIOR
     }
 
     public static void ejercicio24() {
@@ -514,11 +514,11 @@ class Vectores {
          * "El nombre X no está en el array".
          */
         Scanner sc = new Scanner(System.in);
-        String [] nombres = {"Ana", "Carlos", "Lucía", "Pedro", "Sofía"};
+        String[] nombres = { "Ana", "Carlos", "Lucía", "Pedro", "Sofía" };
         System.out.println("introduce un nombre");
         String nombre = sc.nextLine();
         boolean encontrado = false;
-        //Siempre es mejor,al trabajar co arrays el inicializar la posición en -1
+        // Siempre es mejor,al trabajar co arrays el inicializar la posición en -1
         // porque no existe y si no la encuentra no el 0,que SÍ existe
         int posicion = -1;
         for (int i = 0; i < nombres.length; i++) {
@@ -528,8 +528,8 @@ class Vectores {
             }
         }
         if (encontrado) {
-            System.out.println("El nombre " + nombre + " está en el array en la posición " + posicion );
-        }else{
+            System.out.println("El nombre " + nombre + " está en el array en la posición " + posicion);
+        } else {
             System.out.println("El nombre " + nombre + " no está en el array");
         }
     }
@@ -556,7 +556,7 @@ class Vectores {
          * Si el nombre no está en el array, imprime un mensaje diciendo:
          * "El nombre X no está en la lista".
          */
-        //IGUAL QUE EL ANTERIOR
+        // IGUAL QUE EL ANTERIOR
     }
 
     public static void ejercicio26() {
@@ -567,7 +567,7 @@ class Vectores {
          * mensaje indicándolo.
          */
         Scanner sc = new Scanner(System.in);
-        int [] vector = new int[10];
+        int[] vector = new int[10];
         for (int i = 0; i < vector.length; i++) {
             System.out.println("Introduce un número");
             vector[i] = sc.nextInt();
@@ -575,13 +575,13 @@ class Vectores {
         System.out.println("Dime un número a buscar en el vector");
         int n = sc.nextInt();
         int veces = 0;
-        int [] posiciones = new int[10];
+        int[] posiciones = new int[10];
         boolean encontrado = false;
         for (int i = 0; i < vector.length; i++) {
-            if (vector[i]== n) {
+            if (vector[i] == n) {
                 encontrado = true;
                 posiciones[veces] = i;
-                veces ++;
+                veces++;
             }
         }
         if (encontrado) {
@@ -589,7 +589,7 @@ class Vectores {
             for (int i = 0; i < posiciones[veces].length; i++) {
                 System.out.println(i);
             }
-        }else{
+        } else {
             System.out.println("número no encontrado");
         }
     }
@@ -609,12 +609,26 @@ class Vectores {
          * Imprime el valor máximo y el valor mínimo.
          */
 
-        int [] enteros = {10,5,20,15,30,25,40};
-        
+        int[] enteros = { 10, 5, 20, 15, 30, 25, 40 };
+        int max = enteros[0];
+        int min = enteros[0];
+        for (int i = 0; i < enteros.length; i++) {
+            if (enteros[i] > max) {
+                max = enteros[i];
+            }
+
+            if (enteros[i] < min) {
+                min = enteros[i];
+            }
+        }
+        System.out.println(max);
+        System.out.println(min);
+
     }
 
     public static void ejercicio28() {
         /* Pide diez numeros y muestra el maximo, el minimo y sus posiciones. */
+
     }
 
     public static void ejercicio29() {
@@ -628,6 +642,7 @@ class Vectores {
          * cuántos son impares.
          * Imprime el resultado.
          */
+        // IGUAL QUE ANTERIORES
     }
 
     // Nivel 3: entrada, transformación y combinación de vectores
@@ -649,6 +664,23 @@ class Vectores {
          * 
          * Mostrar por pantalla el contenido final del array.
          */
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Dame el tamaño de un array");
+        int tamanio = sc.nextInt();
+        sc.nextLine();
+        String[] cadenas = new String[tamanio];
+        for (int i = 0; i < cadenas.length; i++) {
+            System.out.println("Introduce el nombre de una fruta");
+            String fruta = sc.nextLine();
+            cadenas[i] = fruta;
+        }
+
+        // System.out.println(cadenas.toString());
+
+        for (int i = 0; i < cadenas.length; i++) {
+            System.out.println(cadenas[i]);
+        }
+
     }
 
     public static void ejercicio31() {
