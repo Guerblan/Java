@@ -608,6 +608,9 @@ class Vectores {
          * 
          * Imprime el valor máximo y el valor mínimo.
          */
+
+        int [] enteros = {10,5,20,15,30,25,40};
+        
     }
 
     public static void ejercicio28() {
